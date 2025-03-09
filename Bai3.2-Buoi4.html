@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập HTML & CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th,td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        thead {
+            background-color: #ec4889;
+            color: white;
+
+        }
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+        .image-container {
+
+            display:flex;
+            gap:10px;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            width: 20%; /* Điều chỉnh kích thước ảnh */
+            height: auto;
+            opacity: 0.5; /* Làm mờ ảnh 50% */
+
+        }
+        .image-container img:hover {
+            opacity: 1; /* Khi hover, ảnh hiện rõ hoàn toàn */
+        }
+
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <table>
+        <thead>
+            <tr>
+                <th> Thẻ</th>
+                <th> Chức năng </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> &lt;table&gt</td>
+                <td>Tạo bảng</td>
+            </tr>
+            <tr>
+                <td> &lt;tr&gt</td>
+                <td>Tạo bảng trong bảng</td>
+            </tr><tr>
+                <td> &lt;td&gt</td>
+                <td>Tạo ô dữ liệu trong bảng</td>
+            </tr>
+            <tr>
+                <td> &lt;th&gt</td>
+                <td>Tạo tiêu đề trong cột</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>NHOM NHOM YUMMY YUMMY</h2>
+    <div class="image-container">
+        <img src="images/thit.jpeg" alt="Meat" style="width: 20%; margin: 5px;">
+        <img src="images/rau.jpeg" alt="Vegatable" style="width: 20%; margin: 5px;">
+        <img src="images/suon.jpeg" alt="Fruit" style="width: 20%; margin: 5px;">
+        <img src="images/chalalot.jpeg" alt="Meat" style="width: 20%; margin: 5px;">
+        <img src="images/chuoi.jpeg" alt="Meat" style="width: 20%; margin: 5px;">
+        <img src="images/tulip.jpeg" alt="Fruit" style="width: 20%; margin: 5px;">
+        <img src="images/pomelo.jpeg" alt="Pomelo" style="width: 20%; margin: 5px;">
+        <img src="images/hoatulip.jpeg" alt="Pomelo" style="width: 20%; margin: 5px;">
+    </div>
+    <a href="index.html">Back</a>
+</body>
