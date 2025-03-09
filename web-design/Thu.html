@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang cá nhân</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: pink;
+            padding: 10px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        #TieuDe {
+            color: rgb(223, 18, 18);
+            font-size: 32px;
+            text-align: center;
+            background: rgb(238, 177, 177);
+            margin: 20px;
+            padding: 8px;
+        }
+
+        .NoiDung {
+            color: rgb(8, 68, 8);
+            font-size: 22px;
+            text-align: justify;
+            margin: 5px;
+        }
+
+        summary {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background: #d52c64;
+            color: white;
+            display: block;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        summary:hover {
+            background: #ec407a;
+        }
+
+        .submenu {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .submenu a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .submenu a:hover {
+            background: white;
+        }
+
+        .hobbies img {
+            width: 20%;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Danh sách bài tập</h2>
+        <div class="sessions">
+            <details>
+                <summary>Buổi 1</summary>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="Bai1-Buoi1.html">Bài 1</a></li>
+                        <li><a href="Bai2-Buoi1.html">Bài 2</a></li>
+                        <li><a href="Bai2.2-Buoi1.html">Bài 2.2</a></li>
+                        <li><a href="Bai3-Buoi1.html">Bài 3</a></li>
+                        <li><a href="Bai2.3-Buoi1.html">Bài 2.3</a></li>
+                        <li><a href="Bai4-Buoi1.html">Bài 4</a></li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Buổi 3</summary>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="Bai1-Buoi3.html">Bài 1</a></li>
+                        <li><a href="Bai2-Buoi3.html">Bài 2</a></li>
+                        <li><a href="Bai2.1-Buoi3.html">Bài 2.1</a></li>
+                        <li><a href="Bai2.2-Buoi3.html">Bài 2.2</a></li>
+                        <li><a href="Bai3-Buoi3.html">Bài 3</a></li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Buổi 4</summary>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="Bai1-Buoi4.html">Bài 1</a></li>
+                        <li><a href="Bai1.1-Buoi4.html">Bài 1.1</a></li>
+                        <li><a href="Bai2-Buoi4.html">Bài 2</a></li>
+                        <li><a href="Bai2.2-Buoi4.html">Bài 2.2</a></li>
+                        <li><a href="Bai3.1.1-Buoi4.html">Bài 3</a></li>
+                        <li><a href="Bai3.2-Buoi4.html">Bài 3.2</a></li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <!-- Phần sở thích được di chuyển ra ngoài danh sách bài tập -->
+        <h2>Sở thích</h2>
+        <details>
+            <summary>Hobbies</summary>
+            <div class="hobbies">
+                <li><a href="Bai4-Buoi1.html">Hobbies</a></li>
+            </div>
+        </details>
+    </div>
+
+    <div class="content">
+        <h1 id="TieuDe">Hi </h1>
+        <img src="file:///Users/hoangthingocanh/Downloads/IMG_5003.jpg" alt="Ảnh cá nhân" class="avatar">
+        <p class="NoiDung">Đây là nơi mình chia sẻ những bài tập và sở thích cá nhân.</p>
+
+    </div>
+
+</body>
+</html>

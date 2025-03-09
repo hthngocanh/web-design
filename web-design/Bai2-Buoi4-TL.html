@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model & Display</title>
+    <style>
+        /* Reset mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        /* Hộp màu vàng */
+        .yellow-box {
+            width: 300px;
+            background-color: yellow;
+            padding: 10px;
+            margin: 20px;
+            font-weight: bold;
+        }
+
+
+        .blue-box {
+            width: 300px; /* Kích thước nội dung */
+            background-color: rgb(152, 218, 240);
+            padding: 20px; /* Thêm padding */
+            margin: 20px;
+            border: 1px solid blue; /* Viền màu xanh */
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Padding and element width </h1>
+    <div class="yellow-box">
+        This div is 300px wide.
+    </div>
+    <!-- Hộp màu xanh -->
+    <div class="blue-box">
+        The width of this div is 350px, even though it is defined as 300px in the CSS.
+    </div>
+</body>
+</html>

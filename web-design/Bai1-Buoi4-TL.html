@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <title> Ví dụ về Class và ID </title>
+    </head>
+    <style>
+        #TieuDe {
+            color: blue;
+            font-size:22px;
+            font-weight: normal;
+            text-align:left;
+        }
+        .NoiDung1 {
+            color: green;
+            font-size:16px;
+            text-align:justify;
+        }
+        .NoiDung2 {
+            color: rgb(209, 92, 14) ;
+            font-size:16px;
+            text-align:justify;
+        }
+        .NoiDung3 {
+            color: red;
+            font-size:16px;
+            text-align:justify;
+        }
+        </style>
+        <body>
+            <h1 id="TieuDe"> Drop cap in CSS</h1>
+                <p class="NoiDung1">When creating web pages, user experience should be top of mind. That means that simplicity, visual hierarchy, and meaningfulness must be prioritized in a logical process...</p>
+                <p class="NoiDung2">These guidelines for exceptional web design and usability have the same goal: to make it easy for visitors to find the information they're looking for or complete the tasks they are set out to accomplish. Legible typefaces, consistent color schemes, and breadcrumbs are just a few design elements that can improve the user experience on your site.</p>
+                <p class="NoiDung2">To make a drop cap, wrap the first letter of the paragraph and the left margin of the text. You can use the float and line-height property. Set the float property to left and the line height to 58%. By setting the line-height to 85% instead of 100%, you skip to the top of the capital T with the top of lowercase h.</p>
+                <p class="NoiDung2">Then, to ensure the drop cap and paragraph do not overlap, set a fixed width for the span. Using 0.7em, or 7 times the width of the first letter of the paragraph, will give fine division of padding between the drop cap, right-hand bottom, and the paragraph text. To make the drop cap only 6 times the lines of text, set the font size to 400%. Note that 400% of 16pt (the default font size in W3Schools' Tryit Editor) is 64pt.</p>
+            <h1 id="TieuDe">What is a drop cap?</h1>
+                <p class="NoiDung3">A drop cap is short for "dropped capital." It's the large capital letter you sometimes see at the beginning of a paragraph in print and digital publications. This decorative element is usually the size of two or more lines of text in a paragraph.</p>
+                <p class="NoiDung3">In <u>The Atlantic</u>, drop caps are used to break up sections of an article and signify the starting point of each for the reader. They take up the space of three lines of text, as seen in the excerpt from "The American Nightmare" by Ibram X. Kendi below.</p>
+                <p class="NoiDung3"><u>The New Yorker</u> uses drop caps for a similar purpose on its site but at a smaller size. Its drop caps take up two lines instead of three, as seen in the excerpt from "How Pandemics Wreak Havoc—and Open Minds" by Lawrence Wright below.</p>
+                <p class="NoiDung3">The first way is to wrap the first letter of a paragraph with span tags. You can then style the span, without affecting the rest of the paragraph, by using a CSS selector. Below, we'll use the type selector span.</p>
+        </body>
+        </html>

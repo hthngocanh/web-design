@@ -1,45 +1,181 @@
 <!DOCTYPE html>
 <html lang="vi">
   <head>
-    <title>Danh sách bài tập</title>
-  </head>
-  <style>
-      #TieuDe {
-          color: rgb(30, 106, 30);
-          font-size: 32px;
-          text-align: center;
-          background: rgb(238, 177, 177);
-          border: rgb(2, 42, 2);
-          margin: 20px;
-          padding: 8px;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang cá nhân</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        display: flex;
       }
+
+      .sidebar {
+        width: 250px;
+        background: pink;
+        padding: 10px;
+        position: fixed;
+        height: 100vh;
+        overflow-y: auto;
+      }
+
+      .content {
+        margin-left: 270px;
+        padding: 20px;
+        flex-grow: 1;
+      }
+
+      #TieuDe {
+        color: rgb(223, 18, 18);
+        font-size: 32px;
+        text-align: center;
+        background: rgb(238, 177, 177);
+        margin: 20px;
+        padding: 8px;
+      }
+
       .NoiDung {
         color: rgb(8, 68, 8);
         font-size: 22px;
-        text-align: cnter;
-        margin: 0.5px;
-        
+        text-align: justify;
+        margin: 5px;
       }
 
-      </style>
-  <body>
+      summary {
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px;
+        background: #d52c64;
+        color: white;
+        display: block;
+        border-radius: 5px;
+        text-align: center;
+      }
 
-    <h1 id="TieuDe">DANH SÁCH BÀI TẬP BUỔI 1</h1>
-    <ul style="list-style-type: none; padding: 0">
-      <li class="NoiDung"><a href="Bai 1-Buoi1.html">Bài 1</a></li>
-      <li class="NoiDung"><a href="Bai 2-Buoi1.html">Bài 2</a></li>
-      <li class="NoiDung"><a href="Bai2.2-Buoi1.html">Bài 2.2</a></li>
-      <li class="NoiDung"><a href="Bai2.3-Buoi1.html">Bài 2.1</a></li>
-      <li class="NoiDung"><a href="Bai3-Buoi1.html">Bài 3</a></li>
-      <li class="NoiDung"><a href="Bai4-Buoi1.html">Bài 4</a></li>
-    </ul>
-    <h1 id="TieuDe">DANH SÁCH BÀI TẬP BUỔI 3</h1>
-    <ul style="list-style-type: none; padding: 0">
-      <li class="NoiDung"><a href="Bai 1-Buoi3.html">Bài 1</a></li>
-      <li class="NoiDung"><a href="Bai 2-Buoi3.html">Bài 2</a></li>
-      <li class="NoiDung"><a href="Bai 2.2-Buoi3.html">Bài 2.2</a></li>
-      <li class="NoiDung"><a href="Bai2.1-Buoi3.html">Bài 2.1</a></li>
-      <li class="NoiDung"><a href="Bai3-Buoi3.html">Bài 3</a></li>
-    </ul>
+      summary:hover {
+        background: #ec407a;
+      }
+
+      .submenu {
+        padding-left: 20px;
+        margin-top: 5px;
+      }
+
+      .submenu a {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: black;
+      }
+
+      .submenu a:hover {
+        background: white;
+      }
+
+      .hobbies img {
+        width: 20%;
+        margin: 5px;
+      }
+      .avatar {
+        width: 100px; /* Điều chỉnh kích thước ảnh */
+        height: 100px;
+        border-radius: 50%; /* Làm tròn */
+        display: block;
+        margin: 10px auto 20px; /* Căn giữa theo chiều ngang */
+        border: 3px solid white;
+        position: relative; /* Giữ vị trí trong sidebar */
+        top: 0; /* Đẩy lên đầu */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Danh sách bài tập</h2>
+      <div class="sessions">
+
+          <summary>Buổi 1</summary>
+          <div class="submenu">
+            <ul>
+              <li><a href="Bai1-Buoi1.html">Bài 1</a></li>
+              <li><a href="Bai2-Buoi1.html">Bài 2</a></li>
+              <li><a href="Bai2.2-Buoi1.html">Bài 2.2</a></li>
+              <li><a href="Bai3-Buoi1.html">Bài 3</a></li>
+              <li><a href="Bai2.3-Buoi1.html">Bài 2.3</a></li>
+              <li><a href="Bai4-Buoi1.html">Bài 4</a></li>
+            </ul>
+          </div>
+        </details>
+
+
+        <summary>Buổi 3</summary>
+          <div class="submenu">
+            <ul>
+              <li><a href="Bai1-Buoi3.html">Bài 1</a></li>
+              <li><a href="Bai2-Buoi3.html">Bài 2</a></li>
+              <li><a href="Bai2.1-Buoi3.html">Bài 2.1</a></li>
+              <li><a href="Bai2.2-Buoi3.html">Bài 2.2</a></li>
+              <li><a href="Bai3-Buoi3.html">Bài 3</a></li>
+            </ul>
+          </div>
+
+          <summary>Buổi 4</summary>
+          <div class="submenu">
+            <ul>
+              <li><a href="Bai1-Buoi4.html">Bài 1</a></li>
+              <li><a href="Bai1.1-Buoi4.html">Bài 1.1</a></li>
+              <li><a href="Bai2-Buoi4.html">Bài 2</a></li>
+              <li><a href="Bai3.1.1-Buoi4.html">Bài 3</a></li>
+              <li><a href="Bai3.2-Buoi4.html">Bài 3.2</a></li>
+            </ul>
+          </div>
+      </div>
+
+      <!-- Phần sở thích được di chuyển ra ngoài danh sách bài tập -->
+      <summary>Sở thích</summary>
+
+        <div class="hobbies">
+          <li><a href="Bai4-Buoi1.html">Hobbies</a></li>
+        </div>
+      </details>
+    </div>
+
+    <div class="content">
+      <h1 id="TieuDe">Hi</h1>
+      <img
+        src="https://scontent.fhan3-2.fna.fbcdn.net/v/t1.15752-9/476497612_1772016626909290_6395544859113045263_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEZDiAhePHBs8-kkTl6DAhUtlgwdGXznKq2WDB0ZfOcqtFJkNDp2UA2QCIiat0SHE6H41XfWFnkZ59WpnttCAlm&_nc_ohc=sZPf_4ac6XMQ7kNvgGffpHK&_nc_oc=AdgKDtF6JfDJq9Gdq6hObCKG_CvBMbiwqfEkJNcGxJEjwSsM9_cCqU5EdQyTLZzvVJM&_nc_zt=23&_nc_ht=scontent.fhan3-2.fna&oh=03_Q7cD1wHfyD5cu8fRKauPKGXmdtyqC19n0GG1eeaUpiB7XXCTZg&oe=67F4DEB7"
+        alt="Ảnh cá nhân"
+        class="avatar"
+      />
+      <p class="NoiDung">
+        <h2>Quá trình học tập</h2>
+  <p>
+    Mình là <strong>Ngọc Ánh</strong>, sinh viên năm nhất ngành <strong>Công nghệ Thông tin</strong> .
+  </p>
+    <p>Hiện tại, mình đang học về <strong>thiết kế web</strong>, đặc biệt là <strong>HTML & CSS</strong>.
+    </p>
+<h2>Khả năng về lĩnh vực </h2>
+<p>
+    Mình có khả năng với <strong> sleep </strong>.
+    Ngoài ra, mình cũng thích lập trình với <strong>C</strong>.
+</p>
+
+<h2>Ngành học</h2>
+<p>
+    Ngành <strong>Công nghệ Thông tin</strong> giúp mình hiểu sâu hơn về cách xây dựng và phát triển phần mềm,
+    đặc biệt là trong lĩnh vực <strong>web development</strong>.
+</p>
+
+<h2>Định hướng công việc</h2>
+<p>
+    Mình muốn trở thành <strong> </strong>.
+  </p>
+ <p>   Mục tiêu của mình là thành thạo <strong>CSS</strong>.
+ </p>
+      </p>
+    </div>
   </body>
 </html>
