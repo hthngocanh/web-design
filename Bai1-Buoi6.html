@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Larva</title>
+    <style>
+      body {
+        background-color: #fed3ea;
+        text-align: left;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .image-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-box {
+        border-radius: 8px;
+        width: 100%;
+        float: left;
+      }
+      .image-box img {
+        width: 100%;
+        aspect-ratio: 16 / 9; /* Giữ tỷ lệ ảnh đồng đều */
+        object-fit: cover; /* Đảm bảo ảnh không bị méo */
+        border-radius: 5px;
+      }
+      .note {
+        margin-top: 5px;
+        font-size: 16px;
+        color: #3a5b80;
+        text-align: left;
+      }
+      .back {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #cc0c7f;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center" >Cartoon</h1>
+    <div class="container">
+      <div class="image-wrapper">
+        <div class="image-box">
+          <img
+            src="https://afamilycdn.com/k:thumb_w/600/Tnk9vRlUgEMOa9xiFyoQdi0bvg9Omj/Image/2014/08/Pat_s._spongebob_s._squidward_t.-6633a/chang-bot-bien-tru-danh-spongerbob-sap-tung-hoanh-man-anh-rong.jpg"
+            alt="Bot Bien"
+          />
+        </div>
+        <p class="note">
+          "Bọt Biển" - bộ phim hoạt hình kinh điển của thế hệ 8x, 9x
+        </p>
+      </div>
+      <div class="image-wrapper">
+        <div class="image-box">
+          <img
+            src="https://variety.com/wp-content/uploads/2024/01/Mr-Bean.jpg?w=1000&h=563&crop=1"
+            alt="Mr Bean"
+          />
+        </div>
+        <p class="note">"Mr. Bean" - nhân vật hài hước, ngộ nghĩnh</p>
+      </div>
+      <div class="image-wrapper">
+        <div class="image-box">
+          <img
+            src="https://sb.tinhte.vn/2020/05/5014869_upload_2020-5-9_10-22-20.png"
+            alt="Sau Larva"
+          />
+        </div>
+        <p class="note">"Sâu Larva" - bộ phim hoạt hình hấp dẫn cho trẻ em</p>
+      </div>
+      <a class="back" href="index.html">Back</a>
+    </div>
+  </body>
+</html>
