@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Design</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  a {
+    text-decoration:none;
+    color: black;
+  }
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 200px;
+    background: #f4bed4;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    max-height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar li:hover, .sidebar .active {
+    background: #eda1bf;
+    border-radius: 8px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 220px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f5fc;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.text h1 {
+    font-size: 100px;
+    margin-bottom: 10px;
+}
+
+.text p {
+    font-size: 20px;
+    color: #555;
+}
+
+button {
+    background: #673ab7;
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size:16px;
+}
+
+button:hover {
+    background: #ddacfa;
+}
+
+.image {
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(to right, #80d8ff, #aeea00);
+    border-radius: 12px;
+}
+
+.news {
+    margin-top: 20px;
+    font-size: 30px;
+}
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #F4F4F4;
+    border-radius: 15px;
+    overflow-y: hidden;
+    width: 32%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card:hover {
+    background-color: #e0e0e0ef;
+}
+
+.card-image {
+    height: 150px;
+    width: 100%;
+}
+
+.card-content {
+    height: 33.33%;
+    padding: 15px;
+}
+.card-item {
+    background-color: #fdf7f7;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cột */
+    gap: 16px;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.back {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #e881a7;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Get started</li>
+                    <li>Develop</li>
+                    <li>Foundations</li>
+                    <li>Styles</li>
+                    <li>Components</li>
+                    <li>Blog</li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <section class="hero">
+                <div class="text">
+                    <h1>Material Design</h1>
+                    <p>Material 3 is the latest version of Google’s open-source design system. Design and build beautiful, usable products with Material 3.</p>
+                    <a href="https://m3.material.io/get-started">
+                      <button>Get started</button>
+                    </a>
+                </div>
+                <video width="640" height="360" autoplay muted loop>
+                    <source src="https://kstatic.googleusercontent.com/files/65da8f0326427a8e71bfa678348f3fa1a4bb1660e0b013591eb3bfd9df455bd5a3334249de61229029be7d2fd7cf18d4e143728b7e0702b6bde6251a9c64511a" type="video/mp4">
+                </video>
+
+            </section>
+            <section class="news">
+                <h2>News & launches</h2>
+            </section>
+            <section class="card-container">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('a1.png');"></div>
+                    <div class="card-content">
+                      <a href="https://m3.material.io/blog/google-io-2024">
+                        <h3>Material Design at Google I/O</h3>
+                        <p>See the full list of Material talks and tutorials launching at I/O 2024.</p>
+                      </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('a2.png');"></div>
+                    <div class="card-content">
+                      <a href="https://m3.material.io/blog/get-google-fonts-update">
+                      <h3>How to get Google Fonts</h3>
+                        <p>New API updates and website upgrades make font integration easier than ever.</p>
+                      </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('a3.png');"></div>
+                    <div class="card-content">
+                      <a href="https://www.figma.com/community/file/1035203688168086460/material-3-design-kit">
+
+                        <h3>Figma M3 Design Kit</h3>
+                        <p>Start designing and prototyping with the complete M3 library of ready-made components.</p>
+                      </a>
+                    </div>
+                </div>
+            </section>
+            <section class="news">
+                <h2>Design system updates</h2>
+            </section>
+            <section class="card-container">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('b1.png');"></div>
+                    <div class="card-content">
+                      <a href="https://m3.material.io/foundations/content-design/overview">
+                        <h3>Content design</h3>
+                        <p>Guidance and best practices for UX writing and information design</p>
+                      </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('b2.png');"></div>
+                    <div class="card-content">
+                      <a href="https://m3.material.io/components/carousel/overview">
+                        <h3>New component: Carousel</h3>
+                        <p>An expressive new way to display a horizontally scrolling collection of content</p>
+                      </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('b3.png');"></div>
+                    <div class="card-content">
+                      <a href="https://m3.material.io/develop/android/jetpack-compose">
+                        <h3>M3 for Jetpack Compose</h3>
+                        <p>With the latest stable release, use Jetpack, use Jetpack Compose to build a complete M3 Android app</p>
+                      </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image" style="background-image: url('b4.png');"></div>
+                    <div class="card-content">
+                      <a href="https://www.figma.com/community/plugin/1034969338659738588">
+                        <h3>Material Theme Builder</h3>
+                        <p>Easily migrate or get started with the M3 color system and dynamic color</p>
+                      </a>
+                    </div>
+                </div><div class="card">
+                    <div class="card-image" style="background-image: url('b5.png');"></div>
+                    <div class="card-content">
+                      <a href="https://m3.material.io/styles/icons/applying-icons">
+                        <h3>How the color system works</h3>
+                        <p>From color roles and accessible tone pairs to dynamic color, learn how color works in Material</p>
+                      </a>
+                    </div>
+                </div><div class="card">
+                    <div class="card-image" style="background-image: url('b6.png');"></div>
+                    <div class="card-content">
+                      <a href="https://m3.material.io/styles/icons/applying-icons">
+                        <h3>Using Material icons</h3>
+                        <p>learn how to use and customize the latest system icons for your UI</p>
+                      </a>
+                    </div>
+                </div>
+            </section>
+            <h2>Resources</h2>
+        <div class="grid">
+            <div class="card-item">
+              <a href="https://m3.material.io/blog">
+                <h3>Material blog</h3>
+                <p>News, tutorials, and inspiration from the Material team</p>
+              </a>
+            </div>
+            <div class="card-item">
+              <a href="https://www.figma.com/community/file/1035203688168086460">
+                <h3>Figma M3 Design Kit</h3>
+                <p>Customizable styles and components to help you design with Material 3</p>
+              </a>
+            </div>
+            <div class="card-item">
+              <a href="https://m3.material.io/get-started">
+                <h3>Get started</h3>
+                <p>Guides, videos, and tools to start building with Material</p>
+              </a>
+            </div>
+            <div class="card-item">
+              <a href="https://m3.material.io/develop">
+                <h3>Develop</h3>
+                <p>Code and developer documentation for building with Material</p>
+              </a>
+            </div>
+        </div>
+    </main>
+
+    </div>
+    <a class="back" href="index.html">Back</a>
+</body>
+
+</html>
