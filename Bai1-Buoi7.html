@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album Hot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0a8ba;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      .album-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 10px;
+      }
+      .album-container::-webkit-scrollbar {
+        height: 8px;
+      }
+      .album-container::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 10px;
+      }
+      .album {
+        min-width: 200px;
+        background-color: #1e1e1e;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s;
+        scroll-snap-align: center;
+      }
+      .album img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s, filter 0.3s;
+      }
+      .album:hover img {
+        transform: scale(1.1);
+        filter: brightness(50%);
+      }
+      .album-title {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      .artist {
+        font-size: 14px;
+        color: #bbb;
+      }
+      .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 24px;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .album:hover .overlay {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Album Hot</h2>
+    <div class="album-container">
+      <div class="album">
+        <img
+          src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmaivang.nld.com.vn%2Fmv-gia-nhu-cua-soobin-hoang-son-196241203153441641.htm&psig=AOvVaw3vEfpD-4uYQVdcCgxf_J79&ust=1743047153431000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNj-0fHqpowDFQAAAAAdAAAAABAE"
+        />
+        <div class="overlay">🤍 ▶</div>
+        <div class="album-title">Giá như</div>
+        <div class="artist">Soobin Hoàng Sơn</div>
+      </div>
+
+      <div class="album">
+        <img src="https://i.ytimg.com/vi/LMpWNZ_M64g/maxresdefault.jpg" />
+        <div class="overlay">🤍 ▶</div>
+        <div class="album-title">Lễ Đường</div>
+        <div class="artist">Kai Đinh</div>
+      </div>
+      <div class="album">
+        <img
+          src="https://hocthoisao.com/wp-content/uploads/2025/02/cho-du-tan-the.jpg"
+        />
+        <div class="overlay">🤍 ▶</div>
+        <div class="album-title">Dù cho tận thế</div>
+        <div class="artist">Erik ft. Thùy Tiên</div>
+      </div>
+      <div class="album">
+        <img
+          src="https://i.ytimg.com/vi/HF8QAUkQCYk/maxresdefault.jpg"
+          alt="Tự Ta Đa Tình"
+        />
+        <div class="overlay">🤍 ▶</div>
+        <div class="album-title">Cruel Summer</div>
+        <div class="artist">Taylor Swift</div>
+      </div>
+    </div>
+  </body>
+</html>
