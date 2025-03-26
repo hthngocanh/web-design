@@ -7,26 +7,31 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f0a8ba;
+        background-color: #121212;
         color: white;
         text-align: center;
         padding: 20px;
       }
+
       .album-container {
         width: 90%;
         margin: auto;
         display: flex;
         overflow-x: auto;
+        scroll-snap-type: x mandatory;
         gap: 10px;
         padding-bottom: 10px;
       }
+
       .album-container::-webkit-scrollbar {
         height: 8px;
       }
+
       .album-container::-webkit-scrollbar-thumb {
         background: #555;
         border-radius: 10px;
       }
+
       .album {
         min-width: 200px;
         background-color: #1e1e1e;
@@ -37,23 +42,55 @@
         transition: transform 0.3s;
         scroll-snap-align: center;
       }
+
       .album img {
         width: 100%;
+        aspect-ratio: 1 / 1; /* Đảm bảo tỷ lệ vuông */
         border-radius: 10px;
+        object-fit: cover; /* Giữ đúng tỷ lệ ảnh */
+        object-position: center; /* Căn giữa ảnh */
         transition: transform 0.3s, filter 0.3s;
-      }
+      }.album {
+    width: 200px; /* Cố định chiều rộng album */
+    height: 250px; /* Cố định chiều cao album */
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    scroll-snap-align: center;
+    overflow: hidden;
+}
+
+.album img {
+    width: 100%;
+    height: 180px; /* Đặt chiều cao cố định cho ảnh */
+    object-fit: cover; /* Đảm bảo ảnh luôn đầy đủ và không bị méo */
+    border-radius: 10px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+
       .album:hover img {
         transform: scale(1.1);
         filter: brightness(50%);
       }
+
       .album-title {
         font-size: 16px;
         margin-top: 10px;
       }
+
       .artist {
         font-size: 14px;
         color: #bbb;
       }
+
       .overlay {
         position: absolute;
         top: 50%;
@@ -64,6 +101,7 @@
         opacity: 0;
         transition: opacity 0.3s;
       }
+
       .album:hover .overlay {
         opacity: 1;
       }
@@ -73,36 +111,31 @@
     <h2>Album Hot</h2>
     <div class="album-container">
       <div class="album">
-        <img
-          src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmaivang.nld.com.vn%2Fmv-gia-nhu-cua-soobin-hoang-son-196241203153441641.htm&psig=AOvVaw3vEfpD-4uYQVdcCgxf_J79&ust=1743047153431000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNj-0fHqpowDFQAAAAAdAAAAABAE"
-        />
+        <img src="https://nld.mediacdn.vn/291774122806476800/2024/12/3/copy-of-dscf1745-1733214739734913484978.jpg" />
         <div class="overlay">🤍 ▶</div>
         <div class="album-title">Giá như</div>
         <div class="artist">Soobin Hoàng Sơn</div>
       </div>
 
       <div class="album">
-        <img src="https://i.ytimg.com/vi/LMpWNZ_M64g/maxresdefault.jpg" />
+        <img src="https://cdn-images.vtv.vn/thumb_w/1200/2019/11/15/justin-bieber-credit-gettty-15737962253971734267821.jpg" />
         <div class="overlay">🤍 ▶</div>
-        <div class="album-title">Lễ Đường</div>
-        <div class="artist">Kai Đinh</div>
+        <div class="album-title">Baby</div>
+        <div class="artist">Justin bieber</div>
       </div>
+
       <div class="album">
-        <img
-          src="https://hocthoisao.com/wp-content/uploads/2025/02/cho-du-tan-the.jpg"
-        />
+        <img src="https://variety.com/wp-content/uploads/2024/01/Mr-Bean.jpg?w=1000&h=563&crop=1" />
+        <div class="overlay">🤍 ▶</div>
+        <div class="album-title">Mr Bean</div>
+        <div class="artist">Mr Bean</div>
+      </div>
+
+      <div class="album">
+        <img src="https://hocthoisao.com/wp-content/uploads/2025/02/cho-du-tan-the.jpg" />
         <div class="overlay">🤍 ▶</div>
         <div class="album-title">Dù cho tận thế</div>
         <div class="artist">Erik ft. Thùy Tiên</div>
-      </div>
-      <div class="album">
-        <img
-          src="https://i.ytimg.com/vi/HF8QAUkQCYk/maxresdefault.jpg"
-          alt="Tự Ta Đa Tình"
-        />
-        <div class="overlay">🤍 ▶</div>
-        <div class="album-title">Cruel Summer</div>
-        <div class="artist">Taylor Swift</div>
       </div>
     </div>
   </body>
