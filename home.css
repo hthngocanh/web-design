@@ -1,0 +1,247 @@
+/* MENU */
+  * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Arial', sans-serif;
+        }
+
+    body {
+      background: #f5f5f5;
+        }
+   header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: rgb(117, 203, 235);
+   }
+   nav ul {
+      list-style: none;
+      display: flex;
+      gap: 60px;
+   }
+   nav  ul li a {
+      text-decoration: none;
+      color: #01255b;
+      font-weight: 500;
+      font-size: 16px;
+   }
+   nav ul li a:hover {
+      color: #ff6200;
+   }
+   .header-buttons  button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+   }
+   .header-buttons .login {
+      background-color:white;
+      color: black;
+      margin-right: 10px;
+   }
+   .header-buttons .login:hover {
+      background-color:rgb(222, 218, 218);
+   }
+   .header-buttons .signup {
+      background-color: rgb(0, 130, 242);
+      color: #fff;
+   }
+   .header-buttons .signup:hover {
+      background-color: rgb(0, 120, 198);
+   }
+   /* BANNER */
+   .banner {
+      position: relative;
+      height: 500px;
+      background: url() no repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 50px;
+      overflow: hidden;
+   }
+   .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+   }
+   .search-section {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      background: rgb(159, 228, 242);
+      margin: 0 70px;
+      border-radius: 8px;
+   }
+   .search-section input,
+   .search-section select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 200px;
+      font-size: 14px;
+      background-color: #fff;
+   }
+   .search-section select {
+      appearance: none;
+      background-size: 20px; /* kích thước mũi tên */
+   }
+   .search-section .calendar-icon {
+      position: relative;
+   }
+   .search-section .calendar-icon input {
+      padding-right: 30px; /* Tạo khoảng trống bên phải để đặt icon lịch */
+  }
+  /* LỊCH */
+
+  .search-section .search-btn {
+   padding: 10px 20px;
+   color:#fff;
+   background: #fb6a0a;
+   border-radius: 10px;
+   border: none;
+   cursor: pointer;
+   font-size: 16px;
+  }
+  .search-section .search-btn:hover {
+   background: #e05600;
+  }
+  .why-visit {
+   padding: 50px 50px;
+   background: #fff;
+   margin: 20px 0;
+  }
+  .why-visit h2 {
+   font-size: 24px;
+   font-weight: 600;
+   text-align: center;
+   margin-bottom: 10px;
+   color: #3f57ef;
+  }
+  .why-visit .subtitle {
+   font-size: 16px;
+   text-align: center;
+   margin-bottom: 30px;
+   color: rgb(252, 122, 52);
+  }
+  .why-visit .content {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+  }
+  .why-visit .text {
+   flex:1;
+  }
+  .why-visit .text p {
+   font-size: 16px;
+  }
+  .why-visit .text .food-images {
+   display: flex;
+   gap: 15px;
+   margin: 20px 0;
+   justify-content: center;
+  }
+  .why-visit .text .food-images img {
+   width: 100px;
+   height: 100px;
+   border-radius: 8px;
+   object-fit: cover;
+   border-radius: 5px;
+  }
+  .why-visit .images {
+   flex:1;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+   justify-content: center;
+  }
+  .why-visit .images img {
+   width: 100px;
+   max-width: 300px;
+   height: 200px;
+   border-radius: 8px;
+   object-fit: cover;
+  }
+  /* Festival */
+.festivals {
+   padding: 50px;
+   background-color: rgb(240, 250, 254);
+   margin: 20px 0;
+}
+
+.festivals h2 {
+   font-size: 26px;
+   font-weight: 600;
+   text-align: center;
+   margin-bottom: 10px;
+   color: rgb(0, 162, 255); /* Đổi màu thành đen theo hình ảnh */
+}
+.festivals .subtitle {
+   font-size: 16px;
+   text-align: center;
+   margin-bottom: 20px;
+   color: rgb(252, 122, 52);
+}
+.festival-container {
+   display: flex;
+   gap: 80px;
+   justify-content: center;
+   max-width: 1400px; /* Tăng chiều rộng tối đa để chứa 2 cột */
+   margin: 0 auto;
+}
+
+.festival-column {
+   width: 60%;
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+}
+
+.festival-item {
+
+   display: flex;
+   gap: 20px;
+   align-items: flex-start; /* Căn trên cùng cho hình ảnh và nội dung */
+}
+
+.festival-item img {
+   width: 200px; /* Tăng kích thước hình ảnh theo hình */
+   height: 150px;
+   object-fit: cover;
+   border-radius: 5px;
+   transition: transform 0.3s ease;
+   opacity: 0.5;
+}
+.festival-item img:hover {
+   transform: scale(1.2);
+   opacity: 1;
+}
+
+.festival-inf h3 a {
+   font-size: 18px;
+   font-weight: 600;
+   color: #333; /* Đổi màu thành đen */
+   margin-bottom: 5px;
+   text-decoration: none;
+}
+.festival-inf h3 a:hover {
+   color: #979595;
+}
+.festival-inf p {
+   font-size: 14px;
+   line-height: 1.5;
+   color: #000; /* Đổi màu thành đen */
+}
+
