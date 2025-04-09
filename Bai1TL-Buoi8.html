@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <title>Kiểm tra chẵn lẻ</title>
+    <meta charset="utf-8" />
+    <style>
+      .back {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e881a7;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+  </head>
+  <body>
+    <p>Kiểm tra số chẵn hay lẻ:</p>
+
+    <script type="text/javascript">
+      function kiemTra(a) {
+        if (a % 2 == 0) {
+          return a + " là số chẵn";
+        } else {
+          return a + " là số lẻ";
+        }
+      }
+
+      var a = 20;
+      document.write("<p>" + kiemTra(a) + "</p>");
+    </script>
+  <a class="back" href="index.html">Back</a>
+
+  </body>
+</html>

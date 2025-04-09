@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tìm số lớn nhất và nhỏ nhất</title>
+    <style>
+        .back {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #e881a7;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Nhập vào một dãy số (cách nhau bởi dấu phẩy)</h2>
+
+    <input type="text" id="daySo" placeholder="VD: 8, 3, 14, 2, 9" />
+    <button onclick="timMaxMin()">Tìm số lớn nhất & nhỏ nhất</button>
+
+    <p id="ketQua"></p>
+    <button onclick="quayLaiTrangIndex()">Trở lại</button>
+
+    <script>
+      function timMaxMin() {
+        var input = document.getElementById("daySo").value;
+        var mang = input.split(",").map(function (so) {
+          return parseFloat(so.trim());
+        });
+
+        if (mang.length === 0 || mang.some(isNaN)) {
+          document.getElementById("ketQua").innerText =
+            "Vui lòng nhập đúng định dạng số, cách nhau bằng dấu phẩy.";
+          return;
+        }
+
+        var max = Math.max(...mang);
+        var min = Math.min(...mang);
+
+        document.getElementById("ketQua").innerText =
+          "Số lớn nhất là: " + max + "\nSố nhỏ nhất là: " + min;
+      }
+
+      function quayLaiTrangIndex() {
+        window.location.href = "index.html";
+      }
+    </script>
+  <a class="back" href="index.html">Back</a>
+  </body>
+</html>
