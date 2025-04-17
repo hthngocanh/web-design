@@ -22,13 +22,13 @@
    nav ul {
       list-style: none;
       display: flex;
-      gap: 60px;
+      gap: 80px;
    }
    nav  ul li a {
       text-decoration: none;
       color: #01255b;
-      font-weight: 500;
-      font-size: 16px;
+      font-weight: 550;
+      font-size: 18px;
    }
    nav ul li a:hover {
       color: #ff6200;
@@ -38,7 +38,7 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
    }
    .header-buttons .login {
       background-color:white;
@@ -59,7 +59,6 @@
    .banner {
       position: relative;
       height: 500px;
-      background: url() no-repeat center center/cover;
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -246,4 +245,148 @@
    line-height: 1.5;
    color: #000; /* Đổi màu thành đen */
 }
+ .highlight-destinations{
+   padding: 20px 0;
+   background-color: rgb(228, 245, 249);
+ }
+ .carousel-container {
+   position: relative;
+   max-width: 1200px;
+   margin: 0 auto;
+   text-align: center;
+}
+h2 {
+   color: #ff6200;
+   font-size: 24px;
+   margin-bottom: 20px;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.carousel {
+   overflow: hidden;
+   width: 100%;
+}
+.carousel-inner {
+   display: flex;
+   transition: transform 0.5s ease-in-out;
+}
+.carousel-item {
+   flex: 0 0 33.33%; /* Hiển thị 3 mục cùng lúc */
+   box-sizing: border-box;
+   padding: 20px;
+   text-align: center;
+}
+.carousel-item:hover {
+   transform: scale(1.05);
+}
+.carousel-item img {
+   width: 100%;
+   height: 200px;
+   object-fit: cover;
+   border-radius: 10px;
+}
+.carousel-item p {
+   margin: 10px 0 0;
+   font-weight: bold;
+   color: #333;
+}
+.prev, .next {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   background-color: rgba(0, 0, 0, 0.5);
+   color: white;
+   border: none;
+   padding: 8px;
+   cursor: pointer;
+   font-size: 16px;
+}
+.prev {
+   left: 5px;
+}
+.next {
+   right: 5px;
+}
+/* Phần đánh giá khách hàng */
+.review-section {
+   padding: 40px 20px;
+   text-align: center;
+   max-width: 1200px;
+   margin: 0 auto;
+}
 
+.review-title h1 {
+   font-size: 2em;
+   color: #ff7f50;
+   margin-bottom: 10px;
+   text-transform: uppercase;
+}
+
+.review-title p {
+   font-size: 1em;
+   color: #333;
+   margin-bottom: 30px;
+   line-height: 1.5;
+}
+
+.testimonial-section {
+   display: flex;
+   justify-content: space-between;
+   gap: 20px;
+}
+
+.testimonial {
+   flex: 1;
+   background-color: #e6f0fa;
+   border-radius: 10px;
+   padding: 20px;
+   text-align: left;
+}
+
+.testimonial p {
+   font-size: 1em;
+   color: #333;
+   margin-bottom: 20px;
+   line-height: 1.5;
+}
+
+.user-info {
+   display: flex;
+   align-items: center;
+}
+
+.user-info img {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+
+.user-info span {
+   font-size: 1em;
+   font-weight: bold;
+   color: #333;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+   .info-section, .testimonial-section {
+       flex-direction: column;
+   }
+
+   .info-box, .testimonial {
+       margin: 10px 0;
+   }
+
+   nav ul {
+       flex-direction: column;
+       gap: 10px;
+   }
+
+   .header-buttons {
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+   }
+}

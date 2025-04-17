@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đổi màu bằng JavaScript</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      #text {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        margin-bottom: 15px;
+      }
+
+      button {
+        padding: 10px 18px;
+        background-color: rgb(5, 14, 13);
+        border: 1px solid #ccc;
+        cursor: pointer;
+        margin: 0 5px;
+        font-size: 18px;
+        border-radius: 10px;
+        color: white;
+      }
+
+      h3,
+      p {
+        text-align: center;
+      }
+      .back {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #cc0c7f;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="text">Đổi màu</div>
+      <button onclick="changeToBlue()">xanh</button>
+    </div>
+    <script>
+      const originalColor = document.body.style.backgroundColor || "white";
+
+      function changeToBlue() {
+        document.body.style.backgroundColor = "lightblue";
+      }
+
+      function resetColor() {
+        document.body.style.backgroundColor = originalColor;
+      }
+    </script>
+    <a class="back" href="index.html">Back</a>
+  </body>
+</html>

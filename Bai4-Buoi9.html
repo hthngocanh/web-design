@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Đăng Ký</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8f8f8;
+      }
+
+      form {
+        width: 500px;
+        margin: 30px auto;
+        padding: 25px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(153, 153, 153, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        color: rgb(103, 217, 255);
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      td {
+        padding: 8px;
+        vertical-align: middle;
+      }
+
+      input[type="text"],
+      select {
+        width: 95%;
+        padding: 5px;
+      }
+
+      .checkbox-group {
+        display: flex;
+        flex-wrap: nowrap; /* Chỉnh sửa ở đây để không xuống dòng */
+        gap: 10px;
+      }
+
+      .checkbox-group input {
+        margin-right: 5px;
+      }
+
+      .error {
+        color: red;
+        font-size: 0.9em;
+        display: block;
+        margin-top: 2px;
+      }
+
+      .buttons {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        padding: 8px 16px;
+        margin: 0 10px;
+        border: none;
+        background-color: #21555c;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background-color: #7a5dc7;
+      }
+
+      .ngay-sinh {
+        display: flex;
+        gap: 10px;
+      }
+
+      .ngay-sinh select {
+        width: 30%;
+      }
+      .back {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #cc0c7f;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="return validateForm()">
+      <h2>FORM ĐĂNG KÝ</h2>
+      <table>
+        <tr>
+          <td><label for="ho">Họ:</label></td>
+          <td>
+            <input type="text" id="ho" name="ho" />
+            <span class="error" id="errHo"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="ten">Tên:</label></td>
+          <td>
+            <input type="text" id="ten" name="ten" />
+            <span class="error" id="errTen"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Ngày sinh:</label></td>
+          <td class="ngay-sinh">
+            <select id="ngay" name="ngay">
+              <script>
+                for (let i = 1; i <= 31; i++) {
+                  document.write(`<option>${i}</option>`);
+                }
+              </script>
+            </select>
+            <select id="thang" name="thang">
+              <script>
+                for (let i = 1; i <= 12; i++) {
+                  document.write(`<option>${i}</option>`);
+                }
+              </script>
+            </select>
+            <select id="nam" name="nam">
+              <script>
+                for (let i = 1950; i <= 2025; i++) {
+                  document.write(`<option>${i}</option>`);
+                }
+              </script>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Giới tính:</label></td>
+          <td>
+            <input type="radio" name="gt" value="nam" /> Nam
+            <input type="radio" name="gt" value="nu" /> Nữ
+          </td>
+        </tr>
+        <tr>
+          <td><label for="sdt">Số điện thoại:</label></td>
+          <td>
+            <input type="text" id="sdt" name="sdt" />
+            <span class="error" id="errSdt"></span>
+          </td>
+        </tr>
+        <tr>
+          <td><label>Sở thích:</label></td>
+          <td class="checkbox-group">
+            <label
+              ><input type="checkbox" name="sothich" value="doc_sach" /> Đọc
+              sách</label
+            >
+            <label
+              ><input type="checkbox" name="sothich" value="xem_phim" /> Xem
+              phim</label
+            >
+            <label
+              ><input type="checkbox" name="sothich" value="nghe_nhac" /> Nghe
+              nhạc</label
+            >
+            <label
+              ><input type="checkbox" name="sothich" value="da_bong" /> Đá
+              bóng</label
+            >
+          </td>
+        </tr>
+        <tr>
+          <td><label for="khac">Khác:</label></td>
+          <td><input type="text" id="khac" name="khac" /></td>
+        </tr>
+      </table>
+
+      <div class="buttons">
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" onclick="clearErrors()" />
+      </div>
+    </form>
+
+    <script>
+      function validateForm() {
+        let ho = document.getElementById("ho").value.trim();
+        let ten = document.getElementById("ten").value.trim();
+        let sdt = document.getElementById("sdt").value.trim();
+
+        let errHo = document.getElementById("errHo");
+        let errTen = document.getElementById("errTen");
+        let errSdt = document.getElementById("errSdt");
+
+        errHo.textContent = "";
+        errTen.textContent = "";
+        errSdt.textContent = "";
+
+        let valid = true;
+
+        if (ho === "") {
+          errHo.textContent = "Bạn chưa nhập họ";
+          valid = false;
+        }
+
+        if (ten === "") {
+          errTen.textContent = "Bạn chưa nhập tên";
+          valid = false;
+        }
+
+        if (sdt === "") {
+          errSdt.textContent = "Bạn chưa nhập số điện thoại";
+          valid = false;
+        } else if (isNaN(sdt) || sdt.length !== 10) {
+          errSdt.textContent = "Số điện thoại phải là số và có đúng 10 chữ số";
+          valid = false;
+        }
+
+        return valid;
+      }
+
+      function clearErrors() {
+        document.getElementById("errHo").textContent = "";
+        document.getElementById("errTen").textContent = "";
+        document.getElementById("errSdt").textContent = "";
+      }
+    </script>
+    <script>
+      function updateNgay() {
+        const ngaySelect = document.getElementById("ngay");
+        const thang = parseInt(document.getElementById("thang").value);
+        const nam = parseInt(document.getElementById("nam").value);
+
+        const ngayTrongThang = new Date(nam, thang, 0).getDate(); // Số ngày thực tế
+
+        // Xóa tất cả option cũ
+        ngaySelect.innerHTML = "";
+
+        for (let i = 1; i <= ngayTrongThang; i++) {
+          let option = document.createElement("option");
+          option.value = option.text = i;
+          ngaySelect.appendChild(option);
+        }
+      }
+
+      // Gọi hàm khi trang vừa tải
+      window.onload = function () {
+        updateNgay();
+        document.getElementById("thang").addEventListener("change", updateNgay);
+        document.getElementById("nam").addEventListener("change", updateNgay);
+      };
+    </script>
+    <a class="back" href="index.html">Back</a>
+  </body>
+</html>
