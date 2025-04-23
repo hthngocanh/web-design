@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          .back {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #e881a7;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      </style>
+      </head>
+  <body>
+    <div id="container">
+      <p id="p1">Hello</p>
+      <p id="p2">Hi</p>
+    </div>
+
+    <button onclick="addnode()">add node</button>
+
+    <script>
+      function addnode() {
+        var x = document.createElement("p");
+        x.className = "p3";
+        x.innerText = "Good morning";
+        var cha = document.getElementById("container");
+        var y = document.getElementById("p2");
+        cha.insertBefore(x, y);
+      }
+    </script>
+    <a class="back" href="index.html">Back</a>
+  </body>
+</html>

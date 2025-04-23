@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          .back {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #e881a7;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      </style>
+      </head>
+  <body>
+    <div id="container">
+      <p>Xin chào</p>
+    </div>
+
+    <script>
+      var phantu = document.createElement("h1");
+      phantu.innerHTML = "Xin chào các bạn";
+      var bien = document.getElementById("container");
+      bien.appendChild(phantu);
+    </script>
+    <a class="back" href="index.html">Back</a>
+  </body>
+</html>

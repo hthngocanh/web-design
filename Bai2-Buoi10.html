@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menu Đa Cấp</title>
+    <style>
+      .menu {
+        width: 200px;
+      }
+
+      .menu-button {
+        background-color: #569de3;
+        color: white;
+        padding: 12px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .submenu {
+        display: none;
+        background-color: #f1f1f1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .submenu div {
+        padding: 10px 12px;
+        cursor: pointer;
+      }
+
+      .submenu div:hover {
+        background-color: #ddd;
+      }
+    .back {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e881a7;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    </style>
+  </head>
+  <body>
+    <h3>Bài 2. Menu Đa Cấp</h3>
+
+    <div class="menu">
+      <div class="menu-button" onclick="toggleMenu()">Thiết kế Web</div>
+      <div class="submenu" id="submenu">
+        <div>HTML</div>
+        <div>CSS</div>
+        <div>Javascript</div>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        var submenu = document.getElementById("submenu");
+        if (submenu.style.display === "block") {
+          submenu.style.display = "none";
+        } else {
+          submenu.style.display = "block";
+        }
+      }
+    </script>
+    <a href="index.html">Back</a>
+  </body>
+</html>

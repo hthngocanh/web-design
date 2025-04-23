@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .back {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #e881a7;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    </style>
+    <title>Scroll Test</title>
+  </head>
+  <body>
+    <div style="height: 2000px">CUỘN XUỐNG để xem console.log</div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Đã load xong");
+
+        window.addEventListener("scroll", function () {
+          console.log("đang cuộn chuột");
+          console.log(window.pageYOffset); // in ra vị trí dọc của chuột
+
+          if (window.pageYOffset > 500) {
+            console.log("đến phần sidebar");
+          }
+        });
+      });
+    </script>
+    <a href="index.html">back</a>
+  </body>
+</html>

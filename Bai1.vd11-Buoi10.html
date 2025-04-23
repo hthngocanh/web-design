@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .back {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #e881a7;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p id="p1">Hello</p>
+      <p id="p2">Hi</p>
+    </div>
+
+    <button onclick="changenode()">change node</button>
+
+    <script>
+      function changenode() {
+        var node = document.createElement("div");
+        node.innerText = "XIN CHÀO";
+        var x = document.getElementById("container");
+        var y = document.getElementById("p2");
+        x.replaceChild(node, y);
+      }
+    </script>
+    <a class="back" href="index.html">Back</a>
+  </body>
+</html>

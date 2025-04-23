@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          .back {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #e881a7;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      </style>
+      </head>
+  <body>
+    <div id="bo"></div>
+    <button onclick="addnode_img();">add images</button>
+
+    <script>
+      function addnode_img() {
+        var pt = document.createElement("img");
+        pt.src =
+          "https://media.vietnamplus.vn/images/412d7a512dc574658776239cdcb9e932e87fa2403a16fb3a29dc9a29b767971cb2e098b7efb5a4ad62aaa4a52034befbbac610840f6d4e7c5bea8b3ea37788b44e7e282101303963a6aa2f197a958f5915c7da1fd3bcd1f92348dd755f7952d6/minionswallpapergenoviccomminionsipadwallpaperfree.jpg";
+        document.getElementById("bo").appendChild(pt);
+      }
+    </script>
+    <a class="back" href="index.html">Back</a>
+  </body>
+</html>

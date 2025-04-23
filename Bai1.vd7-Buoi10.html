@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          .back {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #e881a7;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      </style>
+      </head>
+  <body>
+    <div id="container2">
+      <h1 id="heading1">Xin chào</h1>
+      <p id="logOldValue"></p>
+      <button onclick="changeHeading()">Thay đổi nội dung</button>
+    </div>
+
+    <script>
+      function changeHeading() {
+        var pt = document.getElementById("heading1");
+        var old = pt.innerHTML;
+        document.getElementById("logOldValue").innerText =
+          "Giá trị h1 cũ là: " + old;
+        pt.innerHTML = "Tạm biệt";
+      }
+    </script>
+    <a class="back" href="index.html">Back</a>
+  </body>
+</html>

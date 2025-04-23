@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thao Tác Với Class</title>
+    <style>
+      .font_chu {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .mau_chu {
+        color: rgb(0, 123, 148);
+      }
+      .co_chu {
+        font-size: 16px;
+      }
+      .back {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #e881a7;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="font_chu" id="td1">demo về các thao tác với class</h1>
+    <button onclick="tonho()">try it</button>
+
+    <script>
+      var pt = document.getElementById("td1");
+      pt.classList.add("mau_chu", "co_chu");
+      function tonho() {
+        pt.classList.toggle("co_chu");
+      }
+    </script>
+    <a href="index.html">back</a>
+  </body>
+</html>

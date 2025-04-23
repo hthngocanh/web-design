@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .back {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #e881a7;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+  </head>
+  <body>
+    <h2>Finding HTML Elements by Tag Name</h2>
+    <p>Chao Xin</p>
+    <p>Day la loi <b>getElementsByTagName</b> chao.</p>
+    <p id="demo"></p>
+
+    <script>
+      var x = document.getElementsByTagName("p");
+      document.getElementById("demo").innerHTML =
+        "The text in first paragraph (index 0) is: " + x[0].innerHTML;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #navbar {
+        overflow: hidden;
+        background-color: #f1f1f1;
+        padding: 90px 10px;
+        transition: 0.4s;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99;
+      }
+
+      #navbar a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+      }
+
+      #navbar #logo {
+        font-size: 35px;
+        font-weight: bold;
+        transition: 0.4s;
+      }
+
+      #navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      #navbar a.active {
+        background-color: dodgerblue;
+        color: white;
+      }
+
+      #navbar-right {
+        float: right;
+      }
+      .back {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #e881a7;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          font-size: 18px;
+        }
+
+      @media screen and (max-width: 580px) {
+        #navbar {
+          padding: 20px 10px !important;
+        }
+        #navbar a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+        #navbar-right {
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <a href="#default" id="logo">Minion & Mr. Bean</a>
+      <div id="navbar-right">
+        <a class="active" href="#home">Home</a>
+        <a href="#contact">Liên hệ</a>
+        <a href="#about">Giới thiệu</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 210px; padding: 15px 15px 1000px; font-size: 30px">
+      <p><b>Chào mừng đến với thế giới vui nhộn của Minion và Mr. Bean!</b></p>
+
+      <p>
+        Minions là những sinh vật màu vàng, nhỏ nhắn và vô cùng nghịch ngợm. Họ luôn đồng hành cùng nhau và trung thành với những “chủ nhân” siêu ác. Nhưng điều khiến Minions được yêu thích chính là tính cách ngây thơ, hài hước và... cực kỳ vụng về! 🥸
+      </p>
+
+      <p>
+        Trong khi đó, Mr. Bean là một nhân vật kinh điển của phim hài Anh Quốc. Với gương mặt biểu cảm "khó đỡ", ông luôn lâm vào những tình huống dở khóc dở cười chỉ vì tính cách quá ngô nghê và độc đáo. Dù ít nói, Mr. Bean vẫn khiến hàng triệu người cười “ná thở”! 😂
+      </p>
+
+      <p>
+        Hai biểu tượng hài hước này tuy đến từ hai thế giới khác nhau – một hoạt hình, một người thật – nhưng đều có điểm chung là khiến chúng ta quên đi áp lực cuộc sống. Một bộ phim Minions hay một tập phim Mr. Bean vào cuối tuần sẽ là liều thuốc tinh thần tuyệt vời!
+      </p>
+
+      <p>
+        <b>Fun Fact:</b> Trong một phiên bản hài tưởng tượng, nếu Minion và Mr. Bean kết hợp cùng nhau, có lẽ Trái Đất sẽ “vỡ tung vì cười” mất thôi!
+      </p>
+    </div>
+
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 80 ||
+          document.documentElement.scrollTop > 80
+        ) {
+          document.getElementById("navbar").style.padding = "30px 10px";
+          document.getElementById("logo").style.fontSize = "25px";
+        } else {
+          document.getElementById("navbar").style.padding = "80px 10px";
+          document.getElementById("logo").style.fontSize = "35px";
+        }
+      }
+    </script>
+    <a class="back" href="index.html">Back</a>
+  </body>
+</html>
