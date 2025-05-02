@@ -1,200 +1,380 @@
 /* MENU */
-  * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: 'Arial', sans-serif;
-        }
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Lato', sans-serif;
+}
 
-    body {
-      background: #f5f5f5;
-        }
-   header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      background-color: rgb(117, 203, 235);
-   }
-   nav ul {
-      list-style: none;
-      display: flex;
-      gap: 80px;
-   }
-   nav  ul li a {
-      text-decoration: none;
-      color: #01255b;
-      font-weight: 550;
-      font-size: 18px;
-   }
-   nav ul li a:hover {
-      color: #ff6200;
-   }
-   .header-buttons  button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-   }
-   .header-buttons .login {
-      background-color:white;
-      color: black;
-      margin-right: 10px;
-   }
-   .header-buttons .login:hover {
-      background-color:rgb(222, 218, 218);
-   }
-   .header-buttons .signup {
-      background-color: rgb(0, 130, 242);
-      color: #fff;
-   }
-   .header-buttons .signup:hover {
-      background-color: rgb(0, 120, 198);
-   }
-   /* BANNER */
-   .banner {
-      position: relative;
-      height: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      padding-bottom: 50px;
-      overflow: hidden;
-      transition: background-image 0.5s ease-in-out;
-   }
+header {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   position: fixed;
+   width: 100%;
+   z-index: 1000;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   background-color:#d0f0f9;
+}
 
-   .banner-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.4);
-   }
-   .search-section {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 20px;
-      background: rgb(159, 228, 242);
-      margin: 0 70px;
-      border-radius: 8px;
-   }
-   .search-section input,
-   .search-section select {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      width: 200px;
-      font-size: 14px;
-      background-color: #fff;
-   }
-   .search-section select {
-      appearance: none;
-      background-size: 20px; /* kích thước mũi tên */
-   }
-   .search-section .calendar-icon {
-      position: relative;
-   }
-   .search-section .calendar-icon input {
-      padding-right: 30px; /* Tạo khoảng trống bên phải để đặt icon lịch */
-  }
-  /* LỊCH */
+nav ul {
+   list-style: none;
+   display: flex;
+   gap: 80px;
+}
 
-  .search-section .search-btn {
-   padding: 10px 20px;
-   color:#fff;
-   background: #fb6a0a;
+nav ul li a {
+   text-decoration: none;
+   color: #01255b;
+   font-weight: 550;
+   font-size: 20px;
+}
+
+nav ul li a:hover {
+   color: #ff6200;
+}
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+/* Modal */
+.modal {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5); /* Nền mờ */
+   z-index: 1000;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   transition: opacity 0.3s ease;
+}
+
+.modal.show {
+   display: flex;
+   opacity: 1;
+}
+
+/* Form Đăng Nhập và Đăng Ký */
+.login-form, .signup-form {
+   position: relative;
+   background: #fff;
+   padding: 20px;
+   border: 1px solid #ccc;
    border-radius: 10px;
+   width: 100%;
+   max-width: 300px;
+   text-align: center;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Nút đóng */
+.close-btn {
+   position: absolute;
+   top: 10px;
+   right: 15px;
+   font-size: 24px;
+   cursor: pointer;
+   color: #666;
+}
+
+.close-btn:hover {
+   color: #333;
+}
+
+/* Tiêu đề */
+.login-form h2, .signup-form h2 {
+   font-size: 28px;
+   margin-bottom: 20px;
+   color: #333;
+}
+
+/* Form */
+.login-form form, .signup-form form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px; /* Khoảng cách giữa các phần tử trong form */
+}
+
+.login-form label, .signup-form label {
+   font-weight: 500;
+   color: #333;
+   text-align: left;
+}
+
+.login-form input, .signup-form input {
+   padding: 10px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   font-size: 16px;
+   transition: border-color 0.3s ease;
+}
+
+.login-form input:focus, .signup-form input:focus {
+   border-color: #fb6a0a;
+   outline: none;
+}
+
+/* Nút Đăng Nhập/Đăng Ký */
+.login-form button, .signup-form button {
+   padding: 10px;
+   background: #fb6a0a;
+   color: #fff;
    border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-weight: 500;
+   transition: background 0.3s ease;
+}
+
+.login-form button:hover, .signup-form button:hover {
+   background: #e05600;
+}
+
+/* Liên kết quên mật khẩu và chuyển đổi form */
+.forgot-password, .register-link, .login-link {
+   margin-top: 10px;
+   font-size: 14px;
+}
+
+.forgot-password a, .register-link a, .login-link a {
+   color: #fb6a0a;
+   text-decoration: none;
+}
+
+.forgot-password a:hover, .register-link a:hover, .login-link a:hover {
+   text-decoration: underline;
+}
+
+.logo {
+   width: 100px;
+   height: 100px;
+   border-radius: 100%;
+}
+
+.logo > img {
+   border-radius: 100%;
+}
+
+.header-buttons button {
+   padding: 10px 20px;
+   border: none;
+   border-radius: 8px;
    cursor: pointer;
    font-size: 16px;
-  }
-  .search-section .search-btn:hover {
-   background: #e05600;
-  }
-  .why-visit {
+}
+
+.header-buttons .login-btn {
+   background-color: rgb(255, 255, 255);
+   color: #333;
+   margin-right: 10px;
+}
+
+.header-buttons .login-btn:hover {
+   background-color: rgb(121, 201, 245);
+}
+
+.header-buttons .signup-btn {
+   background-color: rgb(0, 130, 242);
+   color: #fff;
+}
+
+.header-buttons .signup-btn:hover {
+   background-color: rgb(0, 120, 198);
+}
+
+.banner {
+   position: relative;
+   width: 100%;
+   height: 800px;
+}
+/* DANG NHAP- DANG KI */
+/* Banner */
+.banner-image {
+   position: relative;
+   width: 100%;
+   height: 800px;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   padding-bottom: 50px;
+   overflow: hidden;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   transition: opacity 0.5s ease-in-out;
+   z-index: 1; /* Đảm bảo banner không chồng lấn với các phần tử khác */
+}
+
+/* Overlay - Đảm bảo overlay chỉ ảnh hưởng đến banner, không ảnh hưởng tới các phần tử khác */
+.banner-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.4);
+   z-index: 2; /* Đảm bảo overlay nằm trên banner */
+}
+
+/* Thanh tìm kiếm */
+.search-bar {
+   position: fixed;  /* Đặt thanh tìm kiếm cố định */
+   top: 20px;  /* Điều chỉnh vị trí của thanh tìm kiếm (có thể thay đổi tùy nhu cầu) */
+   left: 50%;
+   transform: translateX(-50%); /* Căn giữa */
+   z-index: 10;  /* Thanh tìm kiếm phải có z-index cao để nằm trên cùng */
+   width: 80%; /* Thay đổi kích thước thanh tìm kiếm */
+   padding: 10px;
+   background: rgba(255, 255, 255, 0.8);
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   border-radius: 25px;
+}
+
+.search-section {
+   position: absolute;
+   left: 50%;
+   bottom: 10%;
+   transform: translateX(-50%);
+   z-index: 3;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   padding: 34px;
+   width: 70vw;
+   background: rgb(159, 228, 242);
+   border-radius: 8px;
+   opacity: 0.9;
+}
+
+.search-section input,
+.search-section select,
+.search-section .search-btn {
+   flex: 1;
+   min-width: 120px;
+   padding: 10px;
+   border: 0.5px solid #ccc;
+   border-radius: 8px;
+   font-size: 16px;
+   background-color: #fff;
+}
+
+.search-section .search-btn {
+   background: #fb6a0a;
+   color: #fff;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+}
+
+.search-section .search-btn:hover {
+   background: #fb6a0a;
+}
+
+.search-section select {
+   appearance: none;
+   background-size: 20px;
+}
+
+.search-section .calendar-icon {
+   position: relative;
+}
+
+.search-section .calendar-icon input {
+   padding-right: 30px;
+}
+
+/* WHY VISIT */
+.why-visit {
    padding: 50px 50px;
    background: #fff;
    margin: 20px 0;
-  }
-  .why-visit h2 {
-   font-size: 24px;
+}
+
+.why-visit h1 {
+   font-size: 36px;
    font-weight: 600;
-   text-align: center;
+   text-align:center;
    margin-bottom: 10px;
-   color: #3f57ef;
-  }
-  .why-visit .subtitle {
-   font-size: 16px;
+   color: #f55e23;
+}
+
+.why-visit .subtitle {
+   font-size: 20px;
    text-align: center;
-   margin-bottom: 30px;
-   color: rgb(252, 122, 52);
-  }
-  .why-visit .content {
+   margin-bottom: 5px;
+   color: #0077b6;
+   border-bottom: 1px solid #ccc;
+   padding-bottom:12px;
+}
+
+.why-visit .content {
    display: flex;
-   align-items: center;
-   gap: 20px;
-  }
-  .why-visit .text {
-   flex:1;
-  }
-  .why-visit .text p {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 8px auto;
+}
+
+.why-visit .text {
+   flex: 1;
+   max-width: 1300px;
+   align-items:center;
+
+}
+
+.why-visit .text p {
    font-size: 16px;
-  }
-  .why-visit .text .food-images {
-   display: flex;
-   gap: 15px;
-   margin: 20px 0;
-   justify-content: center;
-  }
-  .why-visit .text .food-images img {
-   width: 100px;
-   height: 100px;
-   border-radius: 8px;
-   object-fit: cover;
-   border-radius: 5px;
-  }
-  .why-visit .images {
-   flex:1;
-   display: flex;
-   flex-wrap: wrap;
-   gap: 15px;
-   justify-content: center;
-  }
-  .why-visit .images img {
-   width: 100px;
-   max-width: 300px;
-   height: 200px;
-   border-radius: 8px;
-   object-fit: cover;
-  }
-  /* Festival */
+   line-height: 1.8;
+   text-align: justify;
+
+}
+.why-visit .images {
+   width: 100%;
+   max-width: 1400px; /* Giới hạn chiều rộng tối đa */
+   margin: 30px auto; /* Căn giữa lưới hình ảnh */
+   display: grid;
+   grid-template-columns: repeat(3, 1fr); /* 3 cột đều nhau */
+   gap: 20px; /* Khoảng cách giữa các hình */
+   padding: 0 20px; /* Thêm padding để tránh hình bị cắt */
+ }
+
+ .why-visit .images img {
+   width: 100%;
+   height:300px;
+   object-fit: cover; /* Hình không bị méo */
+   border-radius: 5px; /* Bo góc nhẹ */
+ }
+
+
+/* FESTIVAL */
 .festivals {
-   padding: 50px;
-   background-color: rgb(240, 250, 254);
+   padding: 20px;
+   background-color: #fff;
    margin: 20px 0;
 }
 
 .festivals h2 {
-   font-size: 26px;
+   font-size: 28px;
    font-weight: 600;
    text-align: center;
    margin-bottom: 10px;
-   color: rgb(0, 162, 255); /* Đổi màu thành đen theo hình ảnh */
+   color: #0288d1; /* Đổi màu thành đen theo hình ảnh */
 }
+
 .festivals .subtitle {
    font-size: 16px;
    text-align: center;
    margin-bottom: 20px;
-   color: rgb(252, 122, 52);
+   color: #0077b6;
 }
+
 .festival-container {
    display: flex;
    gap: 80px;
@@ -211,7 +391,6 @@
 }
 
 .festival-item {
-
    display: flex;
    gap: 20px;
    align-items: flex-start; /* Căn trên cùng cho hình ảnh và nội dung */
@@ -223,112 +402,177 @@
    object-fit: cover;
    border-radius: 5px;
    transition: transform 0.3s ease;
-   opacity: 0.5;
 }
+
 .festival-item img:hover {
    transform: scale(1.2);
-   opacity: 1;
 }
 
 .festival-inf h3 a {
-   font-size: 18px;
+   font-size: 20px;
    font-weight: 600;
    color: #333; /* Đổi màu thành đen */
    margin-bottom: 5px;
    text-decoration: none;
 }
+
 .festival-inf h3 a:hover {
-   color: #979595;
+   color:  #fb6a0a;
 }
+
 .festival-inf p {
    font-size: 14px;
    line-height: 1.5;
-   color: #000; /* Đổi màu thành đen */
+   color: #006375; /* Đổi màu thành đen */
+   font-style: italic;
 }
- .highlight-destinations{
-   padding: 20px 0;
-   background-color: rgb(228, 245, 249);
- }
- .carousel-container {
+
+/* Diem den noi bat */
+.highlight-destinations {
+   padding: 40px 0;
+   background-color: #fff;
+   height: 400px;
+}
+
+.carousel-container {
    position: relative;
-   max-width: 1200px;
+   max-width: 1400px;
    margin: 0 auto;
    text-align: center;
 }
+
 h2 {
-   color: #ff6200;
-   font-size: 24px;
+   color:#0288d1;
+   font-size: 28px;
    margin-bottom: 20px;
    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
+
 .carousel {
    overflow: hidden;
    width: 100%;
 }
+
 .carousel-inner {
    display: flex;
    transition: transform 0.5s ease-in-out;
 }
+
 .carousel-item {
+   position: relative;
    flex: 0 0 33.33%; /* Hiển thị 3 mục cùng lúc */
    box-sizing: border-box;
    padding: 20px;
    text-align: center;
 }
+
 .carousel-item:hover {
    transform: scale(1.05);
 }
+
 .carousel-item img {
    width: 100%;
-   height: 200px;
+   height: 300px;
    object-fit: cover;
-   border-radius: 10px;
+   border-radius: 8px;
 }
+
 .carousel-item p {
    margin: 10px 0 0;
    font-weight: bold;
-   color: #333;
+   color: #014772;
+   font-size: 16px;
+   text-align: center;
 }
+
 .prev, .next {
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
-   background-color: rgba(0, 0, 0, 0.5);
-   color: white;
+   background-color: transparent;
+   color: rgb(237, 88, 3);
    border: none;
    padding: 8px;
    cursor: pointer;
-   font-size: 16px;
-}
-.prev {
-   left: 5px;
-}
-.next {
-   right: 5px;
-}
-/* Phần đánh giá khách hàng */
-.review-section {
-   padding: 40px 20px;
-   text-align: center;
-   max-width: 1200px;
-   margin: 0 auto;
+   font-size: 30px;
+
 }
 
-.review-title h1 {
-   font-size: 2em;
-   color: #ff7f50;
-   margin-bottom: 10px;
+.prev {
+   left: -10px;
+}
+
+.next {
+   right: -10px;
+}
+
+.why-choose-section {
+   top: 10px;
+   max-width: 1200px;
+   margin: 0 auto;
+   text-align: center;
+   padding: 80px 0;
+}
+
+.why-choose-section h1 {
+   color: #ff6f61;
+   font-size: 36px;
    text-transform: uppercase;
+   margin-bottom: 40px;
+}
+
+.features {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 40px;
+}
+
+.feature {
+   width: 30%;
+}
+
+.feature h3 {
+   color: #00aaff;
+   font-size: 20px;
+   margin-bottom: 10px;
+}
+
+.feature p {
+   font-size: 14px;
+   color: #666;
+   line-height: 1.5;
+}
+
+/* Đường phân cách */
+.divider {
+   border-top: 1px solid #ccc;
+   margin: 10px auto;
+   max-width: 1200px;
+}
+
+/* Phần đánh giá khách hàng */
+.review-section {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 40px 0;
+   text-align: center;
+}
+
+.review-title h2 {
+   font-size: 28px;
+   color: #0288d1;
+   text-transform: uppercase;
+   margin-bottom: 10px;
 }
 
 .review-title p {
-   font-size: 1em;
+   font-size: 14px;
    color: #333;
    margin-bottom: 30px;
    line-height: 1.5;
 }
 
-.testimonial-section {
+.testimonials {
    display: flex;
    justify-content: space-between;
    gap: 20px;
@@ -343,7 +587,7 @@ h2 {
 }
 
 .testimonial p {
-   font-size: 1em;
+   font-size: 14px;
    color: #333;
    margin-bottom: 20px;
    line-height: 1.5;
@@ -355,38 +599,207 @@ h2 {
 }
 
 .user-info img {
-   width: 50px;
-   height: 50px;
+   width: 60px;
+   height: 60px;
    border-radius: 50%;
    margin-right: 10px;
 }
 
 .user-info span {
-   font-size: 1em;
+   font-size: 14px;
    font-weight: bold;
-   color: #333;
+   color: #00aaff;
 }
+/* Footer */
+.footer {
+   overflow: hidden;
+ }
+
+ /* Ảnh nền với chữ đè lên */
+ .footer-hero {
+   position: relative;
+   width: 100%;
+   height: 400px;
+   overflow: hidden;
+ }
+
+ .footer-hero img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
+
+ /* Nội dung đè lên ảnh */
+ .overlay-content {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: white;
+   padding: 20px;
+   max-width: 800px;
+   background-color: rgba(0, 0, 0, 0.4); /* Nền mờ */
+   border-radius: 16px;
+ }
+
+ .overlay-content h2 {
+   font-size: 28px;
+   color: #f79028;
+   margin-bottom: 10px;
+ }
+
+ .overlay-content h3 {
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 10px;
+ }
+
+ .overlay-content p {
+   font-size: 14px;
+   font-style: italic;
+   margin-bottom: 15px;
+ }
+
+ /* Form */
+ .subscribe-form {
+   display: flex;
+   gap: 10px;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin-top: 10px;
+ }
+
+ .input-group {
+   display: flex;
+   align-items: center;
+   background: white;
+   border-radius: 8px;
+   padding: 8px 10px;
+ }
+
+ .input-group input {
+   border: none;
+   outline: none;
+   font-size: 14px;
+   padding-left: 5px;
+ }
+
+ .icon {
+   font-size: 16px;
+ }
+
+ .subscribe-form button {
+   background-color: #dd6e3f;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   padding: 10px 20px;
+   cursor: pointer;
+ }
+
+ .footer-columns {
+   display: flex;
+   flex-wrap: wrap;
+   background-color: #d7ecfc;
+   padding: 40px 20px;
+   justify-content: space-evenly; /* Changed from space-between */
+ }
+
+ .column {
+   flex: 1;
+   min-width: 180px;
+   max-width: 220px; /* Added to cap column width for consistency */
+   margin: 10px;
+   box-sizing: border-box; /* Added to handle padding/margins */
+ }
+
+ .column h4 {
+   font-size: 14px;
+   color: #3778c2;
+   font-weight: bold;
+   margin-bottom: 10px;
+ }
+
+ .column p {
+   font-size: 14px;
+   margin: 6px 0;
+ }
+
+ .orange {
+   color: #f79028;
+ }
+
+ .footer-bottom {
+   background-color: #1e3a8a;
+   color: white;
+   text-align: center;
+   padding: 10px;
+   font-size: 14px;
+   border-radius: 0 !important;
+ }
 
 
-
-/* Responsive */
-@media (max-width: 768px) {
-   .info-section, .testimonial-section {
-       flex-direction: column;
-   }
-
-   .info-box, .testimonial {
-       margin: 10px 0;
+ /* Reponsive */
+ @media (max-width: 768px) {
+   header {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
    }
 
    nav ul {
-       flex-direction: column;
-       gap: 10px;
+      flex-direction: column;
+      gap: 20px;
    }
 
-   .header-buttons {
-       display: flex;
-       flex-direction: column;
-       gap: 10px;
+   .search-section {
+      flex-direction: column;
+      width: 90vw;
+   }
+
+   .festival-container {
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   .festival-column {
+      width: 100%;
+   }
+
+   .festival-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+   }
+
+   .festival-item img {
+      width: 100%;
+      height: auto;
+   }
+
+   .why-visit .images {
+      grid-template-columns: 1fr;
+   }
+
+   .carousel-item {
+      flex: 0 0 100%;
+   }
+
+   .search-bar {
+      width: 95%;
+      top: 10px;
+   }
+
+   .banner {
+      height: 400px;
+   }
+
+   .banner-image {
+      height: 400px;
+   }
+
+   .highlight-destinations {
+      height: auto;
    }
 }

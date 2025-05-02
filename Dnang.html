@@ -9,7 +9,7 @@
   <body>
     <header>
       <div class="logo">
-        <img src="" />
+        <img src="images/DaNang/logo.png" />
       </div>
       <nav>
         <ul>
@@ -21,12 +21,15 @@
         </ul>
       </nav>
       <div class="header-buttons">
-        <button class="login">Đăng Nhập</button>
-        <button class="signup">Đăng Ký</button>
+        <button onclick="handleShowHiddenForm('login')" class="login-btn">Đăng nhập</button>
+        <button onclick="handleShowHiddenForm('signup')" class="signup-btn">Đăng Ký</button>
       </div>
+
     </header>
     <!-- BANNER -->
-    <section class="banner">
+    <div class="banner">
+      <section class="banner-image">
+      </section>
       <div class="search-section">
         <input type="text" placeholder="Bạn muốn đi đâu?" />
         <select>
@@ -40,43 +43,69 @@
         </div>
         <button class="search-btn">Khám phá ngay</button>
       </div>
-    </section>
+    </div>
     <section class="why-visit">
-      <h2>TẠI SAO BẠN NÊN ĐẾN ĐÀ NẴNG ÍT NHẤT MỘT LẦN</h2>
+      <h1>TẠI SAO BẠN NÊN ĐẾN ĐÀ NẴNG ÍT NHẤT MỘT LẦN</h1>
       <p class="subtitle">
         Đà Nẵng- Thành phố đáng sống, điểm đến không thể bỏ lỡ
       </p>
       <div class="content">
-        <div clas="text">
+        <div class="images">
+          <img
+            src="https://booking.muongthanh.com/upload_images/images/H%60/cau-vang-da-nang.jpg"
+            alt="Cầu Vàng"
+          />
+          <img
+            src="https://danangfantasticity.com/wp-content/uploads/2018/03/da-nang-thanh-pho-cua-nhung-cay-cau-07.jpg"
+            alt="Cầu Rồng"
+          />
+          <img
+            src="https://pavilionhotel.vn/uploads/article/full-h2fsz2fvc5ieih4-888-top-5-bai-bien-dep-nhat-da-nang.jpg" alt="Bãi biển Mỹ Khê"
+          />
+          <img src="https://hoangphuan.com/wp-content/uploads/2024/05/1.png" alt="Bà Nà Hills"/>
+          <img
+            src="https://image.vietgoing.com/article/large/cam-nang-du-lichcu-lao-cham-tu-a-den-z-moi-nhat-2021.jpg"
+          alt ="Cù Lao Chàm"/>
+          <img
+            src="https://cdn3.ivivu.com/2023/10/du-lich-hoi-an-ivivu-img1.jpg?_gl=1*k9221o*_gcl_aw*R0NMLjE3NDQyNTE4OTQuQ2p3S0NBand0ZGlfQmhBQ0Vpd0E5N3k4Qkt3b05oWmlGdnVPSUdMcXN2WmR1SExxS1liY01SSWx4VjRKTmd0bzVtUU9QUGdjVngyWVdCb0NtdXdRQXZEX0J3RQ..*_gcl_au*MTMwNTQzNTQ1NC4xNzQxOTQ5OTk4*_ga*NjI5NjY0NTc3LjE3NDE5NDk5OTY.*_ga_YRG1RN8JP1*MTc0NTczNTc2MS43LjAuMTc0NTczNTc2MS42MC4wLjgxMTQ0MDk5NA.."
+         alt ="Hội An" />
+        </div>
+        <div class="text">
           <p>
-            Đà Nẵng là thành phố trẻ trung, năng động nhưng vẫn giữ được nét
-            bình yên và thân thuộc. Nằm bên bờ biển miền Trung, nơi đây sở hữu
-            những cảnh quan thiên nhiên tuyệt đẹp với bãi biển Mỹ Khê trong
-            xanh, Bà Nà Hills huyền ảo trong sương mờ, hay Cầu Vàng lơ lửng giữa
-            núi rừng. Khi đêm về, những cây cầu biểu tượng như Cầu Rồng, Cầu
-            Sông Hàn lại rực rỡ ánh đèn, tạo nên một thành phố lung linh, quyến
-            rũ.Đà Nẵng là thành phố trẻ trung, năng động nhưng vẫn giữ được nét
-            bình yên và thân thuộc. Nằm bên bờ biển miền Trung, nơi đây sở hữu
-            những cảnh quan thiên nhiên tuyệt đẹp với bãi biển Mỹ Khê trong
-            xanh, Bà Nà Hills huyền ảo trong sương mờ, hay Cầu Vàng lơ lửng giữa
-            núi rừng. Khi đêm về, những cây cầu biểu tượng như Cầu Rồng, Cầu
-            Sông Hàn lại rực rỡ ánh đèn, tạo nên một thành phố lung linh, quyến
-            rũ.
-          </p>
-          <div class="food-images"></div>
-          <p>
-            Không chỉ có cảnh đẹp, Đà Nẵng còn mang đậm dấu ấn văn hóa với những
-            di tích lâu đời như Ngũ Hành Sơn, chùa Linh Ứng, nơi thể hiện tín
-            ngưỡng và đời sống tâm linh của người dân. Những lễ hội như Lễ hội
-            Quán Thế Âm, Lễ hội pháo hoa quốc tế cũng góp phần tạo nên một thành
-            phố giàu bản sắc, luôn sôi động và hấp dẫn du khách.Và tất nhiên,
-            hành trình khám phá Đà Nẵng sẽ không trọn vẹn nếu thiếu đi hương vị
-            ẩm thực. Những món ăn như mì Quảng, bánh xèo giòn rụm, bún mắm nêm
-            đậm đà, hải sản tươi ngon đều mang trong mình tinh hoa ẩm thực miền
-            Trung, mộc mạc nhưng đầy quyến rũ.
+            Đến Đà Nẵng, bạn sẽ không thể rời mắt khỏi Cầu Vàng tại Bà Nà Hills – nơi bạn bước đi giữa mây trời, cảm nhận bàn tay đá khổng lồ nâng niu từng bước chân. Xem Cầu Rồng phun lửa rực rỡ bên sông Hàn vào cuối tuần, thả mình trên bãi biển Mỹ Khê với làn nước trong xanh, hay dạo quanh Bà Nà Hills như lạc vào châu Âu. Đừng quên lặn ngắm san hô ở Cù Lao Chàm và thắp một chiếc đèn lồng ở phố cổ Hội An, nơi ánh đèn soi bóng sông Hoài thơ mộng. Khám phá tất cả cùng Dana Trip – đặt tour ngay để trải nghiệm Đà Nẵng trọn vẹn!
           </p>
         </div>
-        <div class="images"></div>
+        <div class="images">
+          <img
+            src="https://statics.vinwonders.com/mi-quang-da-nang-2_1629273338.jpg"
+            alt="Mì Quảng"
+          />
+          <img
+            src="https://i1-dulich.vnecdn.net/2024/06/19/DN4-1718772964.jpg?w=1200&h=0&q=100&dpr=2&fit=crop&s=H5g5Yhs9ew6vB5iS5af4jw"
+            alt="Gỏi cá Nam Ô"
+          />
+          <img
+            src="https://stcd02265632633.cloud.edgevnpay.vn/website-vnpay-public/fill/2023/11/0dlmll47rn8g1700216535038.jpg"
+            alt="Bánh Xèo"
+          />
+          <img
+            src="https://duonggiahotel.vn/wp-content/uploads/2023/09/banh-trang-cuon-thit-heo-da-nang-AB.jpg"
+            alt="Bánh tráng cuốn thịt heo"
+          />
+          <img
+            src="https://danangbest.com/upload_content/banh-canh-da-nang-1.webp"
+            alt="Bánh canh"
+          />
+          <img
+            src="https://dacsanlamqua.com/wp-content/uploads/2015/10/ca-nuc-kho-tieu-1.jpg"
+            alt="Cá nục kho tiêu"
+          />
+        </div>
+
+        <div class="text">
+          <p>
+            Thưởng thức ẩm thực Đà Nẵng – nơi mỗi món ăn là một câu chuyện! Cắn một miếng bánh xèo giòn rụm, chấm nước mắm chua ngọt, hay nếm thử mì Quảng đậm đà với sợi mì mềm, topping đầy ắp tôm, thịt. Đừng bỏ lỡ bánh tráng cuốn thịt heo thơm lừng, ăn kèm rau sống tươi mát, và gỏi cá Nam Ô cay nồng khó cưỡng. Hãy để Dana Trip đưa bạn đến những quán ngon nhất, khám phá hương vị Đà Nẵng đích thực!
+          </p>
       </div>
     </section>
     <!-- Festival -->
@@ -301,52 +330,156 @@
         <button class="next" onclick="moveSlide(1)">❯</button>
       </div>
     </section>
-    <!-- Phần đánh giá khách hàng -->
-    <section class="review-section">
-      <section class="review-title">
-        <h1>KHÁCH HÀNG NÓI GÌ VỀ CHÚNG TÔI</h1>
-        <p>
-          Chúng tôi vinh hạnh được có cơ hội đồng hành với hơn 10.000 khách hàng
-          trên khắp thế giới
-        </p>
-      </section>
 
-      <section class="testimonial-section">
-        <section class="testimonial">
-          <p>
-            "Tới đặt tour Bà Nà Hills qua trang web ngay, rất thuận tiện và giá
-            cả hợp lý. Đặt online xong chỉ nhắn vé, không cần xếp hàng lâu."
-          </p>
-          <div class="user-info">
-            <img src="ha_my.jpg" alt="Hà My" />
-            <span>Hà My</span>
-          </div>
+
+    <!-- Phần đánh giá khách hàng -->
+    <div class="container">
+        <!-- Phần "Vì sao bạn nên chọn Dana Trip" -->
+        <section class="why-choose-section">
+            <h1>Vì sao bạn nên chọn Dana Trip</h1>
+            <div class="features">
+                <div class="feature">
+                    <h3>Giá tốt nhất cho bạn</h3>
+                    <p>Có nhiều mức giá đa dạng phù hợp với ngân sách và nhu cầu của bạn</p>
+                </div>
+                <div class="feature">
+                    <h3>Đặt chuyến đi dễ dàng</h3>
+                    <p>Các bước booking và chăm sóc khách hàng nhanh chóng và thuận tiện</p>
+                </div>
+                <div class="feature">
+                    <h3>Du lịch tối ưu</h3>
+                    <p>Đa dạng các loại hình tour du lịch với nhiều mức giá khác nhau</p>
+                </div>
+            </div>
         </section>
-        <section class="testimonial">
-          <p>
-            "Mình không biết ăn gì khi đến Đà Nẵng, nhưng nhờ trang web mà thú
-            vị được Mì Quảng và bánh tráng cuốn thịt heo. Dùng lại lần nữa
-            tuyệt!"
-          </p>
-          <div class="user-info">
-            <img src="quoc_anh.jpg" alt="Quốc Anh" />
-            <span>Quốc Anh</span>
-          </div>
+
+        <!-- Đường phân cách -->
+        <div class="divider"></div>
+
+        <!-- Phần đánh giá khách hàng -->
+        <section class="review-section">
+            <div class="review-title">
+                <h2>Khách hàng nói gì về chúng tôi</h2>
+                <p>Chứng tỏ niềm hạnh phúc vì đã có cơ hội đồng hành với hơn 10,000 khách hàng trên khắp thế giới</p>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Tới đặt tour Bà Nà Hills qua trang web này, rất thuận tiện và giá cả hợp lý. Đặt online xong chỉ cần đến nơi, không cần xếp hàng lâu."</p>
+                    <div class="user-info">
+                        <img src="https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2024/09/anh-minion-18.jpg.webp" alt="Hà My">
+                        <span>Hà My</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Mình không biết ăn gì khi đến Đà Nẵng, nhưng nhờ trang web mà đã thử được Mì Quảng và bánh tráng cuốn thịt heo. Dùng xong đúng là đặc sản ngon tuyệt!"</p>
+                    <div class="user-info">
+                        <img src="https://file.hstatic.net/200000863773/file/series_cry_baby__7__718ae4c1215b42fe95b6df8431c57f09_grande.jpg" alt="Quốc Anh">
+                        <span>Quốc Anh</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Tới đây thấy nhiều cây cổ đẹp, nhưng Cầu Rồng phun lửa thì đỉnh là đỉnh! Trang web có lịch trình chi tiết, nên tới bây giờ không bỏ lỡ khoảnh khắc cực kỳ ấn tượng này!"</p>
+                    <div class="user-info">
+                        <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/482783Cgr/anh-mo-ta.png" alt="Bảo Trần">
+                        <span>Bảo Trần</span>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="testimonial">
-          <p>
-            "Tới đây thiên nhiên cây cỏ đẹp, những Cầu Rồng phun lửa thì đỉnh là
-            đáng! Trang web có lịch trình chi tiết, nên tới không bị khoảng khắc
-            cụ thể ấn tượng ngay!"
-          </p>
-          <div class="user-info">
-            <img src="bao_tran.jpg" alt="Bảo Trân" />
-            <span>Bảo Trân</span>
-          </div>
-        </section>
-      </section>
-    </section>
-    <script src="home.js"></script>
+    </div>
+<!-- footer -->
+<footer class="footer">
+
+  <!-- 🔷 Phần ảnh nền có chữ đè lên -->
+  <div class="footer-hero">
+    <img src="https://i2.ex-cdn.com/crystalbay.com/files/content/2024/08/02/ngu-hanh-son-7-1412.jpg" alt="Dana Trip Banner">
+    <div class="overlay-content">
+      <h2>Đồng hành cùng <span class="highlight">DANA TRIP</span></h2>
+      <h3>Theo dõi và cập nhật tin tức mới nhất!</h3>
+      <p>“Đà Nẵng – nơi những hành trình trở thành kỷ niệm khó quên.
+      Cùng chúng tôi khám phá thành phố biển xinh đẹp, hòa mình vào thiên nhiên
+      và tận hưởng từng khoảnh khắc đáng giá!”</p>
+
+      <form class="subscribe-form">
+        <div class="input-group">
+          <span class="icon">✉️</span>
+          <input type="email" placeholder="Nhập email của bạn" required>
+        </div>
+        <button type="submit">Theo dõi</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 🔷 Các cột nội dung -->
+  <div class="footer-columns">
+    <div class="column">
+      <h4>THÔNG TIN LIÊN HỆ</h4>
+      <p>📍 Toà nhà số 1 Kim Mã, Ba Đình, Hà Nội</p>
+      <p>✉️ support@danatrip.vn</p>
+      <p>📞 1900 2006</p>
+      <p>⏰ 08:30 - 21:30 các ngày trong tuần</p>
+    </div>
+    <div class="column">
+      <h4>Về DANA TRIP</h4>
+      <p>Liên hệ chúng tôi</p>
+      <p>Về chúng tôi</p>
+      <p>Trợ giúp</p>
+    </div>
+    <div class="column">
+      <h4>CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
+      <p>Chính sách bảo mật</p>
+      <p>Chính sách hoàn hủy</p>
+      <p>Quy định & Điều kiện</p>
+    </div>
+    <div class="column">
+      <h4>THEO DÕI CHÚNG TÔI</h4>
+      <p class="orange">Facebook</p>
+      <p class="orange">Instagram</p>
+      <p class="orange">YouTube</p>
+    </div>
+
+  </div>
+
+  <!-- 🔷 Dòng bản quyền -->
+  <div class="footer-bottom">
+    © 2025 DANA TRIP. All Rights Reserved.
+  </div>
+  <!-- Modal cho Đăng Nhập -->
+<div class="modal login-modal">
+  <div class="login-form">
+      <span class="close-btn">×</span>
+      <h2>Đăng Nhập</h2>
+      <form>
+          <label for="login-username">Tên đăng nhập:</label>
+          <input type="text" id="login-username" name="username" required />
+          <label for="login-password">Mật khẩu:</label>
+          <input type="password" id="login-password" name="password" required />
+          <button type="submit">Đăng Nhập</button>
+      </form>
+      <p class="forgot-password"><a href="#">Quên mật khẩu?</a></p>
+      <p class="register-link">Chưa có tài khoản? <a href="#" class="switch-to-signup">Đăng ký ngay</a></p>
+  </div>
+</div>
+
+<!-- Modal cho Đăng Ký -->
+<div class="modal signup-modal">
+  <div class="signup-form">
+      <span class="close-btn">×</span>
+      <h2>Đăng Ký</h2>
+      <form>
+          <label for="signup-username">Tên đăng nhập:</label>
+          <input type="text" id="signup-username" name="username" required />
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="email" required />
+          <label for="signup-password">Mật khẩu:</label>
+          <input type="password" id="signup-password" name="password" required />
+          <button type="submit">Đăng Ký</button>
+      </form>
+      <p class="login-link">Đã có tài khoản? <a href="#" class="switch-to-login">Đăng nhập ngay</a></p>
+  </div>
+</div>
+</footer>
+  <script src="home.js"></script>
   </body>
   <!-- </section>
          <script src="home.js">
