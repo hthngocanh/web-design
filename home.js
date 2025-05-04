@@ -10,6 +10,7 @@ window.onload = function () {
     "https://eholiday.vn/wp-content/uploads/2023/03/tha-den-hoa-dang-tren-song-Hoai.jpeg",
     "https://cdn.realtech.com.vn/uploads/gostay/news/2742/bai-ran-nam-o-co-gi.jpg",
     "https://images.vietnamtourism.gov.vn/vn//images/2022/ngu_hanh_son_da_nang_369258062.jpg",
+    "https://datviettour.com.vn/uploads/images/tin-tuc-SEO/mien-trung/Da-Nang/da-nang/danh%20thang/thien-nhien-bai-da-den.jpg",
 
   ];
 
@@ -88,53 +89,61 @@ function handleShowHiddenForm(type) {
   }
 }
 
-
-const loginBtn = document.querySelector('.login-btn');
-const signupBtn = document.querySelector('.signup-btn');
-const loginModal = document.querySelector('.login-modal');
-const signupModal = document.querySelector('.signup-modal');
-const closeButtons = document.querySelectorAll('.close-btn');
-const switchToSignup = document.querySelector('.switch-to-signup');
-const switchToLogin = document.querySelector('.switch-to-login');
+const loginBtn = document.querySelector(".login-btn");
+const signupBtn = document.querySelector(".signup-btn");
+const loginModal = document.querySelector(".login-modal");
+const signupModal = document.querySelector(".signup-modal");
+const closeButtons = document.querySelectorAll(".close-btn");
+const switchToSignup = document.querySelector(".switch-to-signup");
+const switchToLogin = document.querySelector(".switch-to-login");
 
 // Hiển thị modal đăng nhập
-loginBtn.addEventListener('click', () => {
-    loginModal.classList.add('show');
+loginBtn.addEventListener("click", () => {
+  loginModal.classList.add("show");
 });
 
 // Hiển thị modal đăng ký
-signupBtn.addEventListener('click', () => {
-    signupModal.classList.add('show');
+signupBtn.addEventListener("click", () => {
+  signupModal.classList.add("show");
 });
 
 // Đóng modal
-closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        loginModal.classList.remove('show');
-        signupModal.classList.remove('show');
-    });
+closeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    loginModal.classList.remove("show");
+    signupModal.classList.remove("show");
+  });
 });
 
 // Đóng modal khi nhấn ra ngoài
-window.addEventListener('click', (e) => {
-    if (e.target === loginModal) {
-        loginModal.classList.remove('show');
-    }
-    if (e.target === signupModal) {
-        signupModal.classList.remove('show');
-    }
+window.addEventListener("click", (e) => {
+  if (e.target === loginModal) {
+    loginModal.classList.remove("show");
+  }
+  if (e.target === signupModal) {
+    signupModal.classList.remove("show");
+  }
 });
 
 // Chuyển từ đăng nhập sang đăng ký
-switchToSignup.addEventListener('click', (e) => {
-    e.preventDefault();
-    loginModal.classList.remove('show');
-    signupModal.classList.add('show');
+switchToSignup.addEventListener("click", (e) => {
+  e.preventDefault();
+  loginModal.classList.remove("show");
+  signupModal.classList.add("show");
 });
 
 // Chuyển từ đăng ký sang đăng nhập
-switchToLogin.addEventListener('click', (e) => {
-    e.preventDefault();
-    signupModal.classList.remove('show');
-    loginModal.classList.add('show');
+switchToLogin.addEventListener("click", (e) => {
+  e.preventDefault();
+  signupModal.classList.remove("show");
+  loginModal.classList.add("show");
 });
+
+function toggleMobileMenu() {
+  console.log(123);
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  if (mobileMenu) {
+    mobileMenu.classList.toggle("show");
+  }
+}

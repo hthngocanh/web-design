@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hệ thống đặt chỗ du lịch</title>
+  <link href="styles.css" rel="stylesheet"/>
+  <script defer src="script.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center/cover;
+      color: white;
+      margin: 0;
+      padding: 0;
+  
+    }
+    header {
+      background: rgba(165, 210, 247, 0.9);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+header img {
+  max-width: 150px; /* Đảm bảo logo có kích thước hợp lý */
+  height: auto; /* Đảm bảo tỷ lệ của logo không bị biến dạng */
+}
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .auth-buttons button {
+      background: orange;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .auth-buttons button:hover {
+      background: darkorange;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .search-container {
+      text-align: center;
+      margin: 20px;
+    }
+    .search-container input {
+      width: 50%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    .search-results {
+      display: none;
+      background: white;
+      color: black;
+      margin: 10px auto;
+      width: 50%;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    section {
+      text-align: center;
+      padding: 50px;
+    }
+    .vehicle-options, .tour-options {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .vehicle, .tour {
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 200px;
+      transition: transform 0.3s;
+    }
+    .vehicle:hover, .tour:hover {
+      transform: scale(1.05);
+    }
+    .vehicle img, .tour img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .vehicle img:hover, .tour img:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 15px rgba(131, 163, 207, 0.3);
+    }
+    .rating {
+      color: gold;
+      font-size: 1.2em;
+    }
+    button {
+      background: orange;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: darkorange;
+    }
+    .login-form {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+    footer {
+      background: rgba(165, 210, 247, 0.9);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body onload="AOS.init()">
+  <body>
+  <header>
+    <div style="text-align:flex; margin-top: 20px;">
+      <img src="logo.png" alt="Dana Trip Logo" style="width: 120px;">
+    </div>
+      <h1><i class="fa-solid fa-plane"></i> Đặt tour DANA TRIP</h1>
+    <nav>
+      <ul>
+        <li><a href="#tour">Đặt Tour</a></li>
+        <li><a href="#car">Đặt Xe</a></li>
+        <li><a href="#account">Tài Khoản</a></li>
+        <li><a href="#payment">Thanh Toán</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="showLoginForm()">Đăng nhập</button>
+      <button onclick="showRegisterForm()">Đăng ký</button>
+    </div>
+  </header>
+  <script>
+    // Hàm tìm kiếm
+    function searchFunction() {
+        const input = document.getElementById("search-input").value.toLowerCase(); // Lấy từ khóa tìm kiếm
+        const resultsContainer = document.getElementById("search-results");
+        
+        const tours = document.querySelectorAll('.tour');
+        const vehicles = document.querySelectorAll('.vehicle');
+
+        let results = [];
+        
+        // Tìm kiếm trong danh sách các tour
+        tours.forEach(tour => {
+            const title = tour.querySelector('p').textContent.toLowerCase();
+            if (title.includes(input)) {
+                results.push(tour);
+            }
+        });
+        
+        // Tìm kiếm trong danh sách các xe
+        vehicles.forEach(vehicle => {
+            const title = vehicle.querySelector('p').textContent.toLowerCase();
+            if (title.includes(input)) {
+                results.push(vehicle);
+            }
+        });
+
+        // Hiển thị kết quả tìm kiếm
+        if (results.length > 0) {
+            resultsContainer.style.display = "block";
+            resultsContainer.innerHTML = "<h3>Kết quả tìm kiếm:</h3>";
+            results.forEach(result => {
+                resultsContainer.appendChild(result.cloneNode(true)); // Thêm kết quả tìm kiếm
+            });
+        } else {
+            resultsContainer.style.display = "block";
+            resultsContainer.innerHTML = "<h3>Không có kết quả tìm kiếm phù hợp.</h3>";
+        }
+    }
+</script>
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Bạn muốn đi đâu..." onkeyup="searchFunction()">
+  <button onclick="searchFunction()">Tìm kiếm</button>
+  <div class="search-results" id="search-results"></div>
+</div>
+
+    <section id="tour">
+        <h2>Đặt Tour</h2>
+        <div class="tour-options">
+            <div class="tour"><img src="https://dulich3mien.vn/wp-content/uploads/2021/12/cau-ham-rong-da-nang.jpg" alt="Tour Đà Nẵng"><p>Tour Đà Nẵng - 2,500,000 VND/người</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="tour"><img src="https://danangcooking.com/wp-content/uploads/2018/04/hoian_14.jpg" alt="Tour Hội An"><p>Tour Hội An - 2,000,000 VND/người</p><div class="rating">★★★★☆</div><button>Đặt ngay</button></div>
+            <div class="tour"><img src="https://tuandungtravel.com/wp-content/uploads/2022/04/tour-danang.jpg" alt="Tour Bà Nà Hills"><p>Tour Bà Nà Hills - 2,000,000 VND/người</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="tour"><img src="https://static.vinwonders.com/production/VtCCzVHA-cu-lao-cham-thumb-1.jpg" alt="Tour Cù Lao Chàm"><p>Tour Cù Lao Chàm - 1,000,000 VND/người</p><div class="rating">★★★★☆</div><button>Đặt ngay</button></div>
+            <div class="tour"><img src="https://static.vinwonders.com/production/VtCCzVHA-cu-lao-cham-thumb-1.jpg" alt="Tour Ngũ Hành Sơn"><p>Tour Ngũ Hành Sơn - 700,000 VND/người</p><div class="rating">★★★★☆</div><button>Đặt ngay</button></div>
+            <div class="tour"><img src="https://static.vinwonders.com/production/VtCCzVHA-cu-lao-cham-thumb-1.jpg" alt="Tour bán đảo Sơn Trà"><p>Tour bán đảo Sơn Trà - 800,000 VND/người</p><div class="rating">★★★★☆</div><button>Đặt ngay</button></div>
+            <div class="tour"><img src="http://reviewvilla.vn/wp-content/uploads/2022/06/Kinh-nghiem-di-rung-dua-bay-mau-5.jpg" alt="Tour rừng dừa Bảy Mẫu"><p>Tour rừng dừa Bảy Mẫu - 400,000 VND/người</p><div class="rating">★★★★☆</div><button>Đặt ngay</button></div>
+            <div class="tour"><img src="https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1606972528/blog/lzpjwxqxsq0ett4mdfqn.webp" alt="Tour Núi Thần Tài"><p>Tour Núi Thần Tài - 400,000 VND/người</p><div class="rating">★★★★☆</div><button>Đặt ngay</button></div>
+        </div>
+    </section>
+    <section id="car">
+        <h2><i class="fa-solid fa-car"></i> Đặt Xe</h2>
+        <div class="vehicle-options">
+            <div class="vehicle"><img src="https://s1.storage.5giay.vn/image/2023/03/20230313_dc9529c55bf4cf923928de81f7bcf169_1678693611.jpg" alt="SUV"><p>Xe SUV - 800,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="https://thanhnien.mediacdn.vn/Uploaded/chicuong/2022_01_13/toyota-camry-2-1639733236-1639-9625-3741-1639734273-1919.jpeg" alt="Sedan"><p>Xe Sedan - 700,000 VND/ngày</p><div class="rating">★★★★☆</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="https://cdn.tuoitre.vn/471584752817336320/2023/6/8/149755789e054f5b1614-1932028-2read-only-16862412338251915413054.jpg" alt="SUV"><p>Xe Vinfast - 700,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="https://chothuexemaysaigon.com/upload/elfinder/minh-hoa-thue-xe-vison-tr%E1%BA%AFng.jpg" alt="Motorbike"><p>Xe Vision - 150,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="https://bizweb.dktcdn.net/100/234/150/products/autodailyhondashitalia3-1.jpg?v=1562312133970" alt="Motorbike"><p>Xe SH - 200,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="http://www.xedien.com.vn/upimages/articles/xemay50cc/WaveVictoria/xe-wave-1.jpg" alt="Motorbike"><p>Xe Wave - 100,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="http://2.bp.blogspot.com/-uimQ57DBCeU/VCvbrbQnfYI/AAAAAAAAAHw/20eTd9mmRq8/s1600/xe-dap-asama-rb-2300b.JPG" alt="Motorbike"><p>Xe đạp thể thao - 50,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="https://xichlomini.com.vn/wp-content/uploads/2017/06/Xe-dap-doi-PAX-1P.jpg" alt="Motorbike"><p>Xe đạp đôi - 50,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="https://xuongxedap.com/wp-content/uploads/2022/06/xe-dap-4.jpg" alt="Motorbike"><p>Xe đạp đơn - 30,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+            <div class="vehicle"><img src="https://motortrip.vn/wp-content/uploads/2021/10/xe-limousine-sai-gon-da-nang-33-1.jpg" alt="Limousine"><p>Xe Limousine - 1,500,000 VND/ngày</p><div class="rating">★★★★★</div><button>Đặt ngay</button></div>
+        </div>
+    </section>
+
+  <div class="login-form" id="login-form">
+    <h2>Đăng nhập</h2>
+    <input placeholder="Tên đăng nhập" type="text"/>
+    <input placeholder="Mật khẩu" type="password"/>
+    <button onclick="return validateLoginForm()">Đăng nhập</button>
+    <button onclick="hideLoginForm()">Đóng</button>
+  </div>
+
+  <div class="login-form" id="register-form">
+    <h2>Tạo tài khoản</h2>
+    <input placeholder="Tên đăng nhập" type="text"/>
+    <input placeholder="Mật khẩu" type="password"/>
+    <input placeholder="Nhập lại mật khẩu" type="password"/>
+    <button onclick="alert('Tạo tài khoản thành công!')">Đăng ký</button>
+    <button onclick="hideRegisterForm()">Đóng</button>
+  </div>
+
+  <div class="login-form" id="payment-info">
+    <h2>Thông tin Thanh Toán</h2>
+    <p id="payment-details">Chi tiết đang tải...</p>
+    <p>Phương thức thanh toán: <strong>Chuyển khoản / Momo / Tiền mặt</strong></p>
+    <button onclick="hidePaymentInfo()">Đóng</button>
+  </div>
+
+  <script>
+    function searchFunction() {
+      document.getElementById("search-results").style.display = "block";
+      document.getElementById("search-results").innerHTML = "Hiển thị kết quả tìm kiếm...";
+    }
+    function showLoginForm() {
+      document.getElementById("login-form").style.display = "block";
+    }
+    function hideLoginForm() {
+      document.getElementById("login-form").style.display = "none";
+    }
+    function showRegisterForm() {
+      document.getElementById("register-form").style.display = "block";
+    }
+    function hideRegisterForm() {
+      document.getElementById("register-form").style.display = "none";
+    }
+    function validateLoginForm() {
+      const username = document.querySelector('#login-form input[type="text"]');
+      const password = document.querySelector('#login-form input[type="password"]');
+      if (username.value === '' || password.value === '') {
+        alert("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu!");
+        return false;
+      }
+      alert("Đăng nhập thành công!");
+      return true;
+    }
+    const buttons = document.querySelectorAll('.tour button, .vehicle button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const priceText = this.previousElementSibling?.textContent;
+        document.getElementById("payment-details").innerText = `Giá: ${priceText}`;
+        document.getElementById("payment-info").style.display = "block";
+      });
+    });
+    function hidePaymentInfo() {
+      document.getElementById("payment-info").style.display = "none";
+    }
+  </script>
+<!-- Footer -->
+<div class="footer" style="background-color: #d4ecff; padding: 20px; color: #000;">
+  <div class="footer-columns" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <div class="footer-column" style="flex: 1; margin: 10px; min-width: 200px;">
+      <h4 style="color: #0066cc;">THÔNG TIN LIÊN HỆ</h4>
+      <p><strong>Địa chỉ</strong><br> Tòa nhà số 1 Kim Mã, Ba Đình, Hà Nội.</p>
+      <p><strong>Email</strong><br> support@danatrip.vn</p>
+      <p><strong>Hotline</strong><br> 1900 2006</p>
+      <p><strong>Thời gian hỗ trợ</strong><br> 08:30 - 21:30 các ngày trong tuần</p>
+    </div>
+    <div class="footer-column" style="flex: 1; margin: 10px; min-width: 200px;">
+      <h4 style="color: #0066cc;">VỀ DANA TRIP</h4>
+      <p><a href="#">Cách đặt chỗ</a></p>
+      <p><a href="#">Về chúng tôi</a></p>
+      <p><a href="#">Trợ giúp</a></p>
+      <p><a href="#">Liên hệ</a></p>
+    </div>
+    <div class="footer-column" style="flex: 1; margin: 10px; min-width: 200px;">
+      <h4 style="color: #0066cc;">HƯỚNG DẪN</h4>
+      <p><a href="#">Trang chủ</a></p>
+      <p><a href="#">Điểm đến</a></p>
+      <p><a href="#">Ẩm thực</a></p>
+      <p><a href="#">Ưu đãi</a></p>
+    </div>
+    <div class="footer-column" style="flex: 1; margin: 10px; min-width: 200px;">
+      <h4 style="color: #0066cc;">THEO DÕI CHÚNG TÔI</h4>
+      <p>FACEBOOK<br>INSTAGRAM<br>TIKTOK<br>YOUTUBE</p>
+      <h4 style="color: #0066cc;">CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
+      <p><a href="#">Điều khoản sử dụng</a></p>
+      <p><a href="#">Chính sách bảo mật</a></p>
+      <p><a href="#">Chính sách hoàn huỷ</a></p>
+      <p><a href="#">Quy định & điều kiện</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom" style="text-align: center; border-top: 1px solid #000; padding-top: 10px; font-size: 14px;">
+    © 2025 DANA TRIP. All Rights Reserved.
+  </div>
+</div>
+</body>
+</html>
