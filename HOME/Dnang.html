@@ -9,13 +9,13 @@
   <body>
     <header class="pc">
       <div class="logo">
-        <img src="images/DaNang/logo.png" />
+        <img src="logo.png"/>
       </div>
       <nav>
         <ul>
-          <li><a href="http://127.0.0.1:5500/Dnang.html">Trang Chủ</a></li>
+          <li><a href="Dnang.html">Trang Chủ</a></li>
           <li><a href="diemden.html">Điểm Đến</a></li>
-          <li><a href="amthuc (1).html">Ẩm Thực</a></li>
+          <li><a href="amthuc.html">Ẩm Thực</a></li>
           <li><a href="datcho.html">Đặt Chỗ</a></li>
           <li><a href="btl-main">Dịch Vụ</a></li>
         </ul>
@@ -36,7 +36,7 @@
       </div>
       <nav class="mobile-menu hidden">
         <ul>
-          <li><a href="http://127.0.0.1:5500/Dnang.html">Trang Chủ</a></li>
+          <li><a href="Dnang.html">Trang Chủ</a></li>
           <li><a href="diemden.html">Điểm Đến</a></li>
           <li><a href="amthuc.html">Ẩm Thực</a></li>
           <li><a href="datcho.html">Đặt Chỗ</a></li>
@@ -450,15 +450,15 @@
     </div>
     <div class="column">
       <h4>Về DANA TRIP</h4>
-      <p>Liên hệ chúng tôi</p>
+      <p><a href="lienhe.html">Liên hệ chúng tôi</a></p>
       <p>Về chúng tôi</p>
-      <p>Trợ giúp</p>
+      <p><a href="trogiup.html">Trợ giúp</a></p>
     </div>
     <div class="column">
       <h4>CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
-      <p>Chính sách bảo mật</p>
-      <p>Chính sách hoàn hủy</p>
-      <p>Quy định & Điều kiện</p>
+      <p><a href="baomat.html">Chính sách bảo mật</a></p>
+      <p><a href="hoanhuy.html">Chính sách hoàn hủy</a></p>
+      <p><a href="quydinh.html">Quy định & Điều kiện</a></p>
     </div>
     <div class="column">
       <h4>THEO DÕI CHÚNG TÔI</h4>
@@ -476,7 +476,7 @@
   <!-- Modal cho Đăng Nhập -->
 <div class="modal login-modal">
   <div class="login-form">
-      <span class="close-btn">×</span>
+      <span  onclick="handleShowHiddenForm('close')" class="close-btn">×</span>
       <h2>Đăng Nhập</h2>
       <form>
           <label for="login-username">Tên đăng nhập:</label>
@@ -486,14 +486,14 @@
           <button type="submit">Đăng Nhập</button>
       </form>
       <p class="forgot-password"><a href="#">Quên mật khẩu?</a></p>
-      <p class="register-link">Chưa có tài khoản? <a href="#" class="switch-to-signup">Đăng ký ngay</a></p>
+      <p class="register-link">Chưa có tài khoản? <a href="#" onclick="handleShowHiddenForm('signup')" class="switch-to-signup">Đăng ký ngay</a></p>
   </div>
 </div>
 
 <!-- Modal cho Đăng Ký -->
 <div class="modal signup-modal">
   <div class="signup-form">
-      <span class="close-btn">×</span>
+      <span  onclick="handleShowHiddenForm('close')" class="close-btn">×</span>
       <h2>Đăng Ký</h2>
       <form>
           <label for="signup-username">Tên đăng nhập:</label>
@@ -504,7 +504,7 @@
           <input type="password" id="signup-password" name="password" required />
           <button type="submit">Đăng Ký</button>
       </form>
-      <p class="login-link">Đã có tài khoản? <a href="#" class="switch-to-login">Đăng nhập ngay</a></p>
+      <p class="login-link">Đã có tài khoản? <a href="#" onclick="handleShowHiddenForm('login')" class="switch-to-login">Đăng nhập ngay</a></p>
   </div>
 </div>
 </footer>

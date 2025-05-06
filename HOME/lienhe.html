@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Liên hệ</title>
+
+  <!-- Font Google Lato -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-top: 30px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    p, label, input, textarea {
+      font-size: 16px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .contact-info {
+      background-color: #f9f9f9;
+      border-left: 5px solid #007BFF;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    footer {
+      background-color: #70b3da;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Liên hệ</h1>
+  </header>
+
+  <main>
+    <h2>Gửi tin nhắn cho chúng tôi</h2>
+    <form action="#" method="post">
+      <label for="name">Họ và tên</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Nội dung</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Gửi</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Thông tin liên hệ trực tiếp</h3>
+      <p><strong>Email:</strong> support@danatrip.vn</p>
+      <p><strong>Hotline:</strong> 1900 2006</p>
+      <p><strong>Địa chỉ:</strong> Tòa nhà số 1 Kim Mã, Ba Đình, Hà Nội</p>
+      <p><strong>Thời gian làm việc:</strong> 08:30 - 21:30 các ngày trong tuần</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 DANA TRIP. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
