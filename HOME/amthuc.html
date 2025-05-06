@@ -6,14 +6,27 @@
     <title>Ẩm Thực Đà Nẵng - Dana Trip</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        // Set Inter as the default font
-                        sans: ['Inter', 'sans-serif'],
+                        // Đặt Lato làm font sans-serif mặc định
+                        sans: ['Lato', 'sans-serif'],
                     },
+                    // START: Thêm kích thước font tùy chỉnh
+                    fontSize: {
+                        'h2': '1.75rem', // 28px
+                        // Các kích thước khác sẽ sử dụng lớp mặc định của Tailwind
+                        // '4xl': '2.25rem', // 36px (H1)
+                        // 'xl': '1.25rem', // 20px (H3)
+                        // 'base': '1rem', // 16px (Paragraph)
+                        // 'sm': '0.875rem', // 14px (Footer)
+                    },
+                    // END: Thêm kích thước font tùy chỉnh
                     // Add custom animation for subtle pulse
                     keyframes: {
                         pulseSlight: {
@@ -48,10 +61,9 @@
         }
         body {
             /* --- UPDATED BACKGROUND --- */
-            /* QUAN TRỌNG: Thay thế URL placeholder bên dưới bằng URL hình ảnh Cầu Rồng của bạn */
             background: url('https://ik.imagekit.io/tvlk/blog/2024/10/cau-rong-da-nang-3.png?tr=q-70,c-at_max,w-500,h-300,dpr-2') center center/cover no-repeat fixed;
-            font-family: 'Inter', sans-serif; /* Ensure Inter font is applied */
             /* Removed gradient and blend mode */
+            /* Font size mặc định (16px) được quản lý bởi Tailwind qua class 'text-base' hoặc mặc định của body */
         }
         /* Card styling */
         .food-card, .drink-card {
@@ -83,6 +95,7 @@
             padding: 1rem 1.25rem; /* Increased padding */
             text-align: left;
             border-bottom: 1px solid #f3f4f6; /* Lighter border */
+            /* Font size được quản lý bởi Tailwind */
         }
          .menu-table th {
             background-color: rgba(249, 250, 251, 0.97); /* Very light gray */
@@ -113,6 +126,7 @@
              margin-bottom: 2.5rem; /* Increased margin */
          }
          /* Section title styling */
+         /* Font size được quản lý bởi lớp text-h2 trong HTML */
          .section-title {
              position: relative;
              padding-bottom: 0.75rem; /* Space for underline */
@@ -149,6 +163,7 @@
             box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3), 0 2px 4px -2px rgba(59, 130, 246, 0.2);
             color: white;
             font-weight: 500;
+            /* Font size được quản lý bởi Tailwind */
          }
          .nav-button:hover {
             transform: translateY(-3px);
@@ -177,16 +192,15 @@
 
          /* --- START: Header Styles --- */
         .site-header {
-            background-color: #A0C4E2; /* Màu xanh nhạt - Điều chỉnh mã màu cho chính xác */
-            padding: 10px 25px; /* Khoảng đệm trên/dưới và trái/phải */
+            background-color: #A0C4E2; /* Màu xanh nhạt */
+            padding: 10px 25px;
             display: flex;
-            justify-content: space-between; /* Đẩy các phần tử con ra hai bên */
-            align-items: center; /* Căn giữa các phần tử theo chiều dọc */
-            color: #fff; /* Màu chữ mặc định trong header */
-            /* Added z-index to keep header above potential background elements */
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
             position: relative;
             z-index: 20;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: add subtle shadow */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .header-left {
@@ -201,36 +215,35 @@
         }
 
         .logo-image {
-            height: 70px; /* Điều chỉnh chiều cao logo */
-            /* Removed margin-right to place text closer */
-            /* Added basic styling for visibility if the image fails to load */
+            height: 70px;
             background-color: #9fc6e4;
+            border: 1px dashed #ccc;
         }
 
         /* NEW: Style for the large header title */
+        /* Font size được quản lý bởi lớp text-4xl trong HTML */
         .header-title {
-            font-size: 2.2em; /* Kích thước chữ lớn */
-            font-weight: bold; /* Chữ đậm */
-            color: #f8f9fa; /* Màu chữ trắng hơi xám */
-            margin-left: 15px; /* Khoảng cách từ logo */
-            display: flex; /* Để căn chỉnh icon nếu có */
-            align-items: center; /* Căn giữa icon và chữ */
-            white-space: nowrap; /* Ngăn không cho chữ xuống dòng */
+            /* font-size: 2.2em; */ /* Đã xóa */
+            font-weight: bold;
+            color: #f8f9fa;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
         }
 
         /* Optional: Style for an icon before the title */
         .header-title-icon {
-            margin-right: 10px; /* Khoảng cách giữa icon và chữ */
-            /* Điều chỉnh kích thước và màu sắc icon nếu cần */
-            font-size: 0.9em; /* Kích thước icon nhỏ hơn chữ một chút */
+            margin-right: 10px;
+            font-size: 0.9em; /* Giữ nguyên hoặc điều chỉnh nếu cần */
         }
 
 
         .header-right {
             display: flex;
             align-items: center;
-            margin-left: auto; /* Push right content to the far right */
-            flex-shrink: 0; /* Prevent right side from shrinking */
+            margin-left: auto;
+            flex-shrink: 0;
         }
 
         .main-navigation ul {
@@ -241,34 +254,33 @@
         }
 
         .main-navigation li {
-            margin-left: 20px; /* Khoảng cách giữa các mục menu */
+            margin-left: 20px;
         }
 
         .main-navigation a {
-            color: #e9ecef; /* Màu chữ cho link điều hướng - hơi xám */
-            font-size: 0.95em;
-            text-decoration: none; /* Remove underline */
-            transition: color 0.3s ease; /* Hiệu ứng khi hover */
-             white-space: nowrap; /* Ngăn không cho chữ xuống dòng */
+            color: #e9ecef;
+            /* font-size: 0.95em; */ /* Sử dụng text-base hoặc text-sm của Tailwind nếu cần */
+            text-decoration: none;
+            transition: color 0.3s ease;
+             white-space: nowrap;
         }
 
         .main-navigation a:hover {
-            color: #fff; /* Màu chữ khi hover */
+            color: #fff;
         }
 
         /* Style for active header link */
         .main-navigation a.active {
-            color: #fff; /* White text for active link */
-            font-weight: 600; /* Bold text for active link */
-            /* Add a subtle underline or border if desired */
+            color: #fff;
+            font-weight: 600;
              border-bottom: 2px solid #fff;
              padding-bottom: 2px;
         }
 
 
         .auth-buttons {
-            margin-left: 30px; /* Khoảng cách từ navigation tới nút */
-             white-space: nowrap; /* Ngăn không cho chữ xuống dòng */
+            margin-left: 30px;
+             white-space: nowrap;
         }
 
         .btn {
@@ -276,66 +288,65 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.9em;
+            /* font-size: 0.9em; */ /* Sử dụng text-sm hoặc text-base của Tailwind */
             font-weight: bold;
-            margin-left: 10px; /* Khoảng cách giữa 2 nút */
+            margin-left: 10px;
             transition: background-color 0.3s ease;
         }
 
         .btn-login, .btn-register {
-            background-color: #ff9800; /* Màu cam - Điều chỉnh mã màu cho chính xác */
+            background-color: #ff9800;
             color: white;
         }
 
         .btn-login:hover, .btn-register:hover {
-            background-color: #e68a00; /* Màu cam đậm hơn khi hover */
+            background-color: #e68a00;
         }
          /* --- END: Header Styles --- */
 
 
          /* --- START: Footer Styles --- */
+         /* Font size được quản lý bởi lớp text-sm trong HTML */
         .site-footer {
-            background-color: #e0f2f7; /* Màu xanh dương nhạt - Điều chỉnh mã màu cho chính xác */
-            color: #333; /* Màu chữ cơ bản trong footer */
-            padding: 40px 0; /* Khoảng đệm trên/dưới */
-            font-size: 0.9em; /* Kích thước chữ cơ bản */
-            line-height: 1.6; /* Chiều cao dòng cho dễ đọc */
-            /* Ensure footer is below other content */
-            margin-top: auto; /* Pushes footer down if content is short */
+            background-color: #e0f2f7;
+            color: #333;
+            padding: 40px 0;
+            /* font-size: 0.9em; */ /* Đã xóa */
+            line-height: 1.6;
+            margin-top: auto;
         }
 
         .footer-container {
-            max-width: 1200px; /* Giới hạn chiều rộng tối đa */
-            margin: 0 auto; /* Căn giữa container */
-            padding: 0 20px; /* Khoảng đệm trái/phải */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
-            flex-wrap: wrap; /* Cho phép các cột xuống dòng trên màn hình nhỏ */
-            justify-content: space-between; /* Phân bố không gian giữa các cột */
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         .footer-column {
-            flex: 1; /* Cho phép các cột co giãn */
-            min-width: 200px; /* Chiều rộng tối thiểu trước khi xuống dòng */
-            margin: 0 15px 30px 15px; /* Khoảng cách giữa các cột và dưới cùng */
-            /* Đã bỏ flex-basis để các cột chia đều không gian */
-            /* flex-basis: calc(25% - 30px); */
+            flex: 1;
+            min-width: 200px;
+            margin: 0 15px 30px 15px;
         }
 
         .footer-column h4 {
-            font-size: 1em; /* Kích thước tiêu đề cột */
-            color: #002366; /* Màu xanh đậm cho tiêu đề */
+            /* font-size: 1em; */ /* Sử dụng text-base hoặc text-lg của Tailwind nếu cần */
+            color: #002366;
             text-transform: uppercase;
-            margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+            margin-bottom: 15px;
             font-weight: bold;
         }
 
         .footer-column p {
-            margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin */
-            color: #495057; /* Màu chữ cho thông tin liên hệ */
+            margin-bottom: 10px;
+            color: #495057;
+             /* Font size được quản lý bởi lớp text-sm kế thừa từ .site-footer */
         }
 
         .footer-column p strong {
-            color: #002366; /* Màu chữ đậm hơn cho nhãn */
+            color: #002366;
         }
 
         .footer-column ul {
@@ -345,34 +356,30 @@
         }
 
         .footer-column li {
-            margin-bottom: 8px; /* Khoảng cách giữa các link */
+            margin-bottom: 8px;
         }
 
         .footer-column a {
-            color: #0056b3; /* Màu xanh dương cho link */
-            text-decoration: underline; /* Gạch chân link giống hình ảnh */
+            color: #0056b3;
+            text-decoration: underline;
             transition: color 0.3s ease;
+            /* Font size được quản lý bởi lớp text-sm kế thừa từ .site-footer */
         }
 
         .footer-column a:hover {
-            color: #003d80; /* Màu link đậm hơn khi hover */
-            text-decoration: none; /* Bỏ gạch chân khi hover (tùy chọn) */
+            color: #003d80;
+            text-decoration: none;
         }
 
-        /* Tiêu đề riêng cho phần chính sách trong cột 4 */
-        /* Đã xóa quy tắc này vì phần chính sách đã được chuyển sang cột riêng */
-        /* .footer-column .policy-title {
-            margin-top: 15px;
-        } */
-
         /* Phần copyright (nếu có) */
+        /* Font size được quản lý bởi lớp text-sm kế thừa từ .site-footer */
         .footer-bottom {
             text-align: center;
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #cce7f0; /* Đường kẻ phân cách nhẹ */
-            font-size: 0.85em;
-            color: #6c757d; /* Màu chữ nhạt hơn */
+            border-top: 1px solid #cce7f0;
+            /* font-size: 0.85em; */ /* Đã xóa */
+            color: #6c757d;
         }
          /* --- END: Footer Styles --- */
 
@@ -382,90 +389,87 @@
             .site-header {
                 padding: 15px;
             }
-            .header-title {
-                 font-size: 1.8em; /* Slightly smaller title on tablet */
-            }
+            /* Điều chỉnh font size header title cho tablet nếu cần */
+            /* .header-title { font-size: ... } */
             .header-right {
-                 width: auto; /* Allow natural width */
-                 margin-top: 0; /* Reset margin */
+                 width: auto;
+                 margin-top: 0;
                  flex-direction: column;
-                 align-items: flex-end; /* Align to the right */
-                 margin-left: 15px; /* Add some space from the title */
+                 align-items: flex-end;
+                 margin-left: 15px;
             }
             .main-navigation {
                  margin-bottom: 10px;
             }
             .main-navigation ul {
-                 flex-direction: row; /* Keep horizontal */
+                 flex-direction: row;
             }
              .main-navigation li {
                  margin-left: 15px;
                  margin-bottom: 0;
              }
              .auth-buttons {
-                 margin-left: 0; /* Reset margin */
-                 margin-top: 0; /* Reset margin */
+                 margin-left: 0;
+                 margin-top: 0;
              }
 
             .footer-column {
-                /* Trên màn hình nhỏ hơn, cho 2 cột một hàng */
                 flex-basis: calc(50% - 30px);
             }
         }
 
         @media (max-width: 768px) { /* Smaller Tablet / Large Mobile */
              .site-header {
-                 flex-direction: column; /* Stack logo/title and right side */
+                 flex-direction: column;
                  align-items: flex-start;
              }
+             /* Điều chỉnh font size header title cho mobile nếu cần */
+             /* .header-title { font-size: ... } */
              .header-right {
-                 width: 100%; /* Take full width when stacked */
+                 width: 100%;
                  margin-top: 15px;
-                 flex-direction: row; /* Arrange nav and buttons horizontally again */
-                 justify-content: space-between; /* Space them out */
+                 flex-direction: row;
+                 justify-content: space-between;
                  align-items: center;
-                 margin-left: 0; /* Reset margin */
+                 margin-left: 0;
              }
              .main-navigation ul {
                  flex-direction: row;
              }
              .main-navigation li {
-                 margin-left: 10px; /* Reduce spacing */
+                 margin-left: 10px;
                  margin-bottom: 0;
              }
-              .main-navigation a {
-                 font-size: 0.9em; /* Slightly smaller nav links */
-              }
+              /* Điều chỉnh font size nav link cho mobile nếu cần */
+              /* .main-navigation a { font-size: ... } */
              .auth-buttons {
-                 margin-left: 15px; /* Space from nav */
+                 margin-left: 15px;
              }
+             /* Điều chỉnh font size button cho mobile nếu cần */
+             /* .btn { font-size: ... } */
              .btn {
                  padding: 6px 12px; /* Smaller buttons */
-                 font-size: 0.85em;
              }
         }
 
         @media (max-width: 576px) { /* Mobile */
             .header-left {
-                 margin-bottom: 10px; /* Add space below logo/title on mobile */
-                 /* Center logo and title */
+                 margin-bottom: 10px;
                  width: 100%;
                  justify-content: center;
             }
-            .header-title {
-                font-size: 1.6em; /* Smaller title on mobile */
-                margin-left: 10px;
-            }
+            /* Điều chỉnh font size header title cho mobile nhỏ hơn nếu cần */
+            /* .header-title { font-size: ... } */
             .header-right {
-                 flex-direction: column; /* Stack nav and buttons */
-                 align-items: center; /* Center them */
+                 flex-direction: column;
+                 align-items: center;
                  margin-top: 10px;
             }
              .main-navigation {
                  margin-bottom: 10px;
              }
              .main-navigation ul {
-                 flex-direction: column; /* Stack nav items */
+                 flex-direction: column;
                  align-items: center;
              }
              .main-navigation li {
@@ -473,48 +477,48 @@
                  margin-bottom: 8px;
              }
              .auth-buttons {
-                 margin-left: 0; /* Reset margin */
-                 margin-top: 10px; /* Add space */
+                 margin-left: 0;
+                 margin-top: 10px;
              }
 
             .footer-container {
-                flex-direction: column; /* Chuyển thành 1 cột */
-                align-items: center; /* Căn giữa nội dung */
-                text-align: center; /* Căn giữa chữ trong cột */
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
             .footer-column {
-                flex-basis: 100%; /* Mỗi cột chiếm toàn bộ chiều rộng */
+                flex-basis: 100%;
                 min-width: auto;
-                margin: 0 0 30px 0; /* Chỉ cần margin dưới */
+                margin: 0 0 30px 0;
                 padding: 0 15px;
             }
              .footer-column ul {
-                /* display: inline-block; */ /* Giúp canh giữa list nếu cần */
                 text-align: center;
              }
              .footer-column h4 {
-                 text-align: center; /* Center footer titles on mobile */
+                 text-align: center;
              }
              .footer-column p {
-                 text-align: center; /* Center footer paragraphs on mobile */
+                 text-align: center;
              }
         }
          /* --- END: Responsive Adjustments --- */
 
     </style>
 </head>
-<body class="font-sans flex flex-col min-h-screen">
-    <header class="site-header">
+<body class="font-sans text-base flex flex-col min-h-screen">
+<header class="site-header">
         <div class="header-left">
-                 <img src="logo.png" class="logo-image">
+            <a href="/" class="logo-link">
+                 <img src="logo.png" alt="Logo Dana Trip" class="logo-image" onerror="this.onerror=null; this.src='https://placehold.co/100x70/9fc6e4/ffffff?text=Logo'; this.alt='Logo Dana Trip Placeholder';">
             </a>
-            <span class="header-title">
-                <span class="header-title-icon">✈</span> Ẩm thực DANA TRIP
+            <span class="header-title text-4xl">
+            <span class="header-title-icon">✈</span> Ẩm thực DANA TRIP
             </span>
         </div>
         <div class="header-right">
             <nav class="main-navigation">
-                <ul>
+                <ul class="text-base">
                     <li><a href="#page1" id="nav-header-page1" onclick="setActiveLink('page1'); return false;">Đồ Ăn  </a></li>
                     <li><a href="#page2" id="nav-header-page2" onclick="setActiveLink('page2'); return false;">Nước Uống </a></li>
                     <li><a href="#page4" id="nav-header-page4" onclick="setActiveLink('page4'); return false;">Thực Đơn Đồ Ăn  </a></li>
@@ -522,8 +526,8 @@
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <button class="btn btn-login">Đăng nhập</button>
-                <button class="btn btn-register">Đăng ký</button>
+                <button class="btn btn-login text-sm">Đăng nhập</button>
+                <button class="btn btn-register text-sm">Đăng ký</button>
             </div>
         </div>
     </header>
@@ -537,7 +541,7 @@
                         id="searchInput"
                         placeholder="Tìm kiếm món ăn/đồ uống..."
                         onkeyup="handleSearchInput(event)"
-                        class="w-full pl-12 pr-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-md text-sm"
+                        class="w-full pl-12 pr-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-md text-sm" /* Input giữ text-sm */
                     />
                     <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
                         <i data-lucide="search" class="w-5 h-5"></i>
@@ -547,39 +551,129 @@
 
             <div id="page1" class="page-content active">
                  <section class="section-container">
-                    <h2 class="section-title text-3xl font-semibold mb-8 text-center md:text-left">Những món ăn đặc sản</h2>
+                    <h2 class="section-title text-h2 font-semibold mb-8 text-center md:text-left">Những món ăn đặc sản</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="food-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/d0/d3/48/d0d348e962b37a82859887a89e9c03fb.jpg" alt="Tré trộn Đà Nẵng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Tré trộn</h3> <p class="text-sm text-gray-600">Món ăn có vị chua nhẹ, mùi vị đậm đà</p> </div> </div>
-                        <div class="food-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/5c/a8/ed/5ca8ed91a4d8447668d39d3a1ea9947c.jpg" alt="Bánh mì Bò Hầm Đà Nẵng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Bánh mì Bò Hầm</h3> <p class="text-sm text-gray-600">Thịt bò mềm, nước sốt đậm vị</p> </div> </div>
-                        <div class="food-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/89/52/5b/89525b295a5189fba31ad14e1e6cc6f7.jpg" alt="Bún ốc Đà Nẵng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Bún ốc</h3> <p class="text-sm text-gray-600">Nước dùng có vị chua nhẹ, thịt ốc dai, đậm vị</p> </div> </div>
-                        <div class="food-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/fa/cd/03/facd037c44d71b845be2a6889ac4d3a2.jpg" alt="Gỏi cá Nam Ô Đà Nẵng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Gỏi cá Nam Ô</h3> <p class="text-sm text-gray-600">Thơm bùi vị Cá, món đặc sản</p> </div> </div>
-                        <div class="food-card"> <img class="w-full h-48 object-cover" src="https://cdnv2.tgdd.vn/mwg-static/common/Common/ghe-sua-rim.jpg" alt="Ghẹ sữa rim mắm" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Ghẹ sữa rim mắm</h3> <p class="text-sm text-gray-600">Ghẹ sữa giòn, đậm vị mắm</p> </div> </div>
-                        <div class="food-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/09/6d/d7/096dd7cd58058a8228e7d2ea84518142.jpg" alt="Phá Lấu" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Phá Lấu</h3> <p class="text-sm text-gray-600">Dai, đậm đà, thơm nước cốt dừa</p> </div> </div>
-                        <div class="food-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/21/7a/82/217a824606345feb8ee8227d93697cbd.jpg" alt="Bánh Canh" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Bánh Canh</h3> <p class="text-sm text-gray-600">Sợi bánh dai, mềm, nhiều chế biến</p> </div> </div>
-                        <div class="food-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/93/c4/81/93c4810493c7f2b7e533aa1ade5b1cf4.jpg" alt="Mỳ quảng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Mỳ quảng</h3> <p class="text-sm text-gray-600">Sợi mỳ dai, ngon, thơm mùi trứng</p> </div> </div>
+                        <div class="food-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/d0/d3/48/d0d348e962b37a82859887a89e9c03fb.jpg" alt="Tré trộn Đà Nẵng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Tr%C3%A9+tr%E1%BB%99n';">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Tré trộn</h3>
+                                <p class="text-base text-gray-600">Món ăn có vị chua nhẹ, mùi vị đậm đà</p>
+                                </div>
+                        </div>
+                        <div class="food-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/5c/a8/ed/5ca8ed91a4d8447668d39d3a1ea9947c.jpg" alt="Bánh mì Bò Hầm Đà Nẵng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=B%C3%A1nh+m%C3%AC+B%C3%B2+H%E1%BA%A7m';">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Bánh mì Bò Hầm</h3>
+                                <p class="text-base text-gray-600">Thịt bò mềm, nước sốt đậm vị</p>
+                            </div>
+                        </div>
+                         <div class="food-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/89/52/5b/89525b295a5189fba31ad14e1e6cc6f7.jpg" alt="Bún ốc Đà Nẵng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=B%C3%BAn+%E1%BB%91c';">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Bún ốc</h3>
+                                <p class="text-base text-gray-600">Nước dùng có vị chua nhẹ, thịt ốc dai, đậm vị</p>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/fa/cd/03/facd037c44d71b845be2a6889ac4d3a2.jpg" alt="Gỏi cá Nam Ô Đà Nẵng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=G%E1%BB%8Fi+c%C3%A1+Nam+%C3%94';">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Gỏi cá Nam Ô</h3>
+                                <p class="text-base text-gray-600">Thơm bùi vị Cá, món đặc sản</p>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img class="w-full h-48 object-cover" src="https://cdnv2.tgdd.vn/mwg-static/common/Common/ghe-sua-rim.jpg" alt="Ghẹ sữa rim mắm" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Gh%E1%BA%B9+s%E1%BB%AFa+rim';">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Ghẹ sữa rim mắm</h3>
+                                <p class="text-base text-gray-600">Ghẹ sữa giòn, đậm vị mắm</p>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/09/6d/d7/096dd7cd58058a8228e7d2ea84518142.jpg" alt="Phá Lấu" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Ph%C3%A1+L%E1%BA%A5u';">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Phá Lấu</h3>
+                                <p class="text-base text-gray-600">Dai, đậm đà, thơm nước cốt dừa</p>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/21/7a/82/217a824606345feb8ee8227d93697cbd.jpg" alt="Bánh Canh" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=B%C3%A1nh+Canh';">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Bánh Canh</h3>
+                                <p class="text-base text-gray-600">Sợi bánh dai, mềm, nhiều chế biến</p>
+                            </div>
+                        </div>
+                        <div class="food-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/93/c4/81/93c4810493c7f2b7e533aa1ade5b1cf4.jpg" alt="Mỳ quảng" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=M%E1%BB%B3+Qu%E1%BA%A3ng';">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Mỳ quảng</h3>
+                                <p class="text-base text-gray-600">Sợi mỳ dai, ngon, thơm mùi trứng</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
                  <section class="section-container">
-                    <h2 class="section-title text-2xl font-semibold mb-6 text-center md:text-left">Món ăn phổ biến</h2>
+                    <h2 class="section-title text-h2 font-semibold mb-6 text-center md:text-left">Món ăn phổ biến</h2>
                     <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-6">
-                         <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/04/56/cd/0456cde887c78fe9d10dfb88626bea42.jpg" alt="Bún cuốn thịt" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bún cuốn thịt</h3> </div> </div>
-                        <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/f6/1c/c0/f61cc0fa17090db5738489d680d57eea.jpg" alt="Bánh mì que" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bánh mì que</h3> </div> </div>
-                        <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/fa/b3/34/fab3340dbb93d798cde1ac9f55cb65be.jpg" alt="Bánh khọt" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bánh khọt</h3> </div> </div>
-                         <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/03/0e/4d/030e4d37372ed4689092e618c3165db5.jpg" alt="Bánh mì" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bánh mì</h3> </div> </div>
-                         <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/e0/67/64/e0676401addcccbf0ebdbde4c775adbe.jpg" alt="Ốc hấp" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Ốc hấp</h3> </div> </div>
-                         <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/69/da/6a/69da6a8c08d2d3970c9f0a47c4ae8411.jpg" alt="Bánh tráng nướng" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bánh tráng trứng</h3> </div> </div>
-                        <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/38/46/33/38463397fc7e4eb2a6162be3acf2b19b.jpg" alt="Bánh khọt tôm" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bánh khọt tôm</h3> </div> </div>
-                        <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/eb/d3/be/ebd3be97449bb9bf8976cb8f6d898c60.jpg" alt="Bánh ít" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bánh ít</h3> </div> </div>
-                        <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/54/0b/ad/540bad881de1d981888939fd9034d8f0.jpg" alt="Bánh dừa nướng" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bánh dừa nướng</h3> </div> </div>
-                        <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/59/35/03/5935035bc2ebad55575ff8d08b1a4fdc.jpg" alt="Bánh rán gấc" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Bánh tráng gốc</h3> </div> </div>
-                        <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/ba/e8/4e/bae84eb17e2e77af3d74e258c32c52d8.jpg" alt="Mực một nắng" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Mực một nắng</h3> </div> </div>
-                        <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/4e/81/3d/4e813d0ebaa8d5304ea16678c0be819d.jpg" alt="Mực ướp cay" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Mực ướp cay</h3> </div> </div>
-                         <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/cb/94/ba/cb94baaaf95be15e8e4d786b4f8f2ab6.jpg" alt="Cá thiều sấy" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Cá thiều sấy</h3> </div> </div>
-                         <div class="food-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/58/db/1a/58db1a7c830ed3bb363d9cba4f4f9054.jpg" alt="Cá khô sấy" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Cá khô sấy</h3> </div> </div>
+                         <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/04/56/cd/0456cde887c78fe9d10dfb88626bea42.jpg" alt="Bún cuốn thịt" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%BAn+cu%E1%BB%91n+th%E1%BB%8Bt';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bún cuốn thịt</h3> </div>
+                            </div>
+                        <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/f6/1c/c0/f61cc0fa17090db5738489d680d57eea.jpg" alt="Bánh mì que" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%A1nh+m%C3%AC+que';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bánh mì que</h3> </div>
+                        </div>
+                        <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/fa/b3/34/fab3340dbb93d798cde1ac9f55cb65be.jpg" alt="Bánh khọt" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%A1nh+kh%E1%BB%8Dt';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bánh khọt</h3> </div>
+                        </div>
+                         <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/03/0e/4d/030e4d37372ed4689092e618c3165db5.jpg" alt="Bánh mì" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%A1nh+m%C3%AC';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bánh mì</h3> </div>
+                         </div>
+                         <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/e0/67/64/e0676401addcccbf0ebdbde4c775adbe.jpg" alt="Ốc hấp" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=%E1%BB%90c+h%E1%BA%A5p';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Ốc hấp</h3> </div>
+                         </div>
+                         <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/69/da/6a/69da6a8c08d2d3970c9f0a47c4ae8411.jpg" alt="Bánh tráng nướng" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%A1nh+tr%C3%A1ng+tr%E1%BB%A9ng';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bánh tráng trứng</h3> </div>
+                         </div>
+                        <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/38/46/33/38463397fc7e4eb2a6162be3acf2b19b.jpg" alt="Bánh khọt tôm" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%A1nh+kh%E1%BB%8Dt+t%C3%B4m';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bánh khọt tôm</h3> </div>
+                         </div>
+                        <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/eb/d3/be/ebd3be97449bb9bf8976cb8f6d898c60.jpg" alt="Bánh ít" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%A1nh+%C3%ADt';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bánh ít</h3> </div>
+                         </div>
+                        <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/54/0b/ad/540bad881de1d981888939fd9034d8f0.jpg" alt="Bánh dừa nướng" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%A1nh+d%E1%BB%ABa+n%C6%B0%E1%BB%9Bng';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bánh dừa nướng</h3> </div>
+                         </div>
+                        <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/59/35/03/5935035bc2ebad55575ff8d08b1a4fdc.jpg" alt="Bánh rán gấc" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=B%C3%A1nh+tr%C3%A1ng+g%E1%BB%91c';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Bánh tráng gốc</h3> </div>
+                         </div>
+                        <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/ba/e8/4e/bae84eb17e2e77af3d74e258c32c52d8.jpg" alt="Mực một nắng" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=M%E1%BB%B1c+m%E1%BB%99t+n%E1%BA%AFng';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Mực một nắng</h3> </div>
+                         </div>
+                        <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/4e/81/3d/4e813d0ebaa8d5304ea16678c0be819d.jpg" alt="Mực ướp cay" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=M%E1%BB%B1c+%C6%B0%E1%BB%9Bp+cay';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Mực ướp cay</h3> </div>
+                         </div>
+                         <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/cb/94/ba/cb94baaaf95be15e8e4d786b4f8f2ab6.jpg" alt="Cá thiều sấy" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=C%C3%A1+thi%E1%BB%81u+s%E1%BA%A5y';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Cá thiều sấy</h3> </div>
+                         </div>
+                         <div class="food-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/58/db/1a/58db1a7c830ed3bb363d9cba4f4f9054.jpg" alt="Cá khô sấy" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=C%C3%A1+kh%C3%B4+s%E1%BA%A5y';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Cá khô sấy</h3> </div>
+                         </div>
                         </div>
                 </section>
                 <footer class="mt-12 flex justify-end">
-                    <button onclick="setActiveLink('page2');" class="nav-button flex items-center px-5 py-2.5 rounded-lg shadow-md">
+                    <button onclick="setActiveLink('page2');" class="nav-button flex items-center px-5 py-2.5 rounded-lg shadow-md text-base">
                         <i data-lucide="arrow-right" class="w-4 h-4 mr-2"></i>
                         Trang sau (Đồ uống)
                     </button>
@@ -588,30 +682,57 @@
 
             <div id="page2" class="page-content">
                  <section class="section-container">
-                    <h2 class="section-title text-3xl font-semibold mb-8 text-center md:text-left">Đồ uống nổi tiếng</h2>
-                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="drink-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/96/93/8c/96938cf7782796801cc0a8a7252f4ff8.jpg" alt="Cafe sữa" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Cafe sữa</h3> <p class="text-sm text-gray-600">Đắng nhẹ vị cafe, béo</p> </div> </div>
-                        <div class="drink-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/95/b7/9a/95b79abcf15e64c6fecd1468df83296f.jpg" alt="Sương sáo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Sương sáo</h3> <p class="text-sm text-gray-600">Giải nhiệt mùa hè</p> </div> </div>
-                        <div class="drink-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/cb/07/84/cb0784174c7cf1dd0c2f49d29dfb8791.jpg" alt="Trà tắc" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Trà tắc</h3> <p class="text-sm text-gray-600">Ngọt dịu vị trà và vị tắc</p> </div> </div>
-                        <div class="drink-card"> <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/be/17/83/be1783acca905f7fba629ba9d29cb71d.jpg" alt="Trà chanh" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-5"> <h3 class="font-semibold text-lg mb-1.5 text-gray-800">Trà chanh</h3> <p class="text-sm text-gray-600">Đậm vị trà và vị chua mát quả chanh</p> </div> </div>
+                    <h2 class="section-title text-h2 font-semibold mb-8 text-center md:text-left">Đồ uống nổi tiếng</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="drink-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/96/93/8c/96938cf7782796801cc0a8a7252f4ff8.jpg" alt="Cafe sữa" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Cafe+s%E1%BB%AFa';">
+                            <div class="p-5"> <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Cafe sữa</h3> <p class="text-base text-gray-600">Đắng nhẹ vị cafe, béo</p> </div>
+                            </div>
+                        <div class="drink-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/95/b7/9a/95b79abcf15e64c6fecd1468df83296f.jpg" alt="Sương sáo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=S%C6%B0%C6%A1ng+s%C3%A1o';">
+                            <div class="p-5"> <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Sương sáo</h3> <p class="text-base text-gray-600">Giải nhiệt mùa hè</p> </div>
+                        </div>
+                        <div class="drink-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/cb/07/84/cb0784174c7cf1dd0c2f49d29dfb8791.jpg" alt="Trà tắc" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Tr%C3%A0+t%E1%BA%AFc';">
+                            <div class="p-5"> <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Trà tắc</h3> <p class="text-base text-gray-600">Ngọt dịu vị trà và vị tắc</p> </div>
+                        </div>
+                        <div class="drink-card">
+                            <img class="w-full h-48 object-cover" src="https://i.pinimg.com/736x/be/17/83/be1783acca905f7fba629ba9d29cb71d.jpg" alt="Trà chanh" onerror="this.onerror=null; this.src='https://placehold.co/300x200/f1f5f9/64748b?text=Tr%C3%A0+chanh';">
+                            <div class="p-5"> <h3 class="font-semibold text-xl mb-1.5 text-gray-800">Trà chanh</h3> <p class="text-base text-gray-600">Đậm vị trà và vị chua mát quả chanh</p> </div>
+                        </div>
                     </div>
                 </section>
                  <section class="section-container">
-                    <h2 class="section-title text-2xl font-semibold mb-6 text-center md:text-left">Loại nước phổ biến</h2>
-                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                         <div class="drink-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/11/88/8f/11888f3f0c72597a7390ed861f82d714.jpg" alt="Nước ép nho" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Nước ép nho</h3> </div> </div>
-                        <div class="drink-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/a7/e0/21/a7e021a4b7ea9642ec2fc34dbe39a1cc.jpg" alt="Rượu mơ" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Rượu mơ</h3> </div> </div>
-                        <div class="drink-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/0c/e6/b1/0ce6b1f1b32ab5be802d4082d2facca0.jpg" alt="Nước dừa" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Nước dừa</h3> </div> </div>
-                        <div class="drink-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/e5/16/f2/e516f221bd5f6af9c3429ec8b59fe77a.jpg" alt="Nước mía" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Nước mía</h3> </div> </div>
-                        <div class="drink-card"> <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/aa/47/46/aa47468e6314fd6d82ffa8c2d41760c3.jpg" alt="Cafe phin" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Image+Not+Found';"> <div class="p-4 text-center"> <h3 class="font-medium text-sm text-gray-800">Cafe phin</h3> </div> </div>
+                    <h2 class="section-title text-h2 font-semibold mb-6 text-center md:text-left">Loại nước phổ biến</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                         <div class="drink-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/11/88/8f/11888f3f0c72597a7390ed861f82d714.jpg" alt="Nước ép nho" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=N%C6%B0%E1%BB%9Bc+%C3%A9p+nho';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Nước ép nho</h3> </div>
+                            </div>
+                        <div class="drink-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/a7/e0/21/a7e021a4b7ea9642ec2fc34dbe39a1cc.jpg" alt="Rượu mơ" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=R%C6%B0%E1%BB%A3u+m%C6%A1';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Rượu mơ</h3> </div>
+                         </div>
+                        <div class="drink-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/0c/e6/b1/0ce6b1f1b32ab5be802d4082d2facca0.jpg" alt="Nước dừa" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=N%C6%B0%E1%BB%9Bc+d%E1%BB%ABa';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Nước dừa</h3> </div>
+                         </div>
+                        <div class="drink-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/e5/16/f2/e516f221bd5f6af9c3429ec8b59fe77a.jpg" alt="Nước mía" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=N%C6%B0%E1%BB%9Bc+m%C3%ADa';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Nước mía</h3> </div>
+                         </div>
+                        <div class="drink-card">
+                            <img class="w-full h-36 object-cover" src="https://i.pinimg.com/736x/aa/47/46/aa47468e6314fd6d82ffa8c2d41760c3.jpg" alt="Cafe phin" onerror="this.onerror=null; this.src='https://placehold.co/200x150/f1f5f9/64748b?text=Cafe+phin';">
+                            <div class="p-4 text-center"> <h3 class="font-medium text-xl text-gray-800">Cafe phin</h3> </div>
+                         </div>
                     </div>
                 </section>
                  <footer class="mt-12 flex justify-between">
-                    <button onclick="setActiveLink('page1');" class="nav-button bg-gray-500 flex items-center px-5 py-2.5 rounded-lg shadow-md">
+                    <button onclick="setActiveLink('page1');" class="nav-button bg-gray-500 flex items-center px-5 py-2.5 rounded-lg shadow-md text-base">
                         <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
                         Trang trước (Món ăn)
                     </button>
-                    <button onclick="setActiveLink('page3');" class="nav-button flex items-center px-5 py-2.5 rounded-lg shadow-md">
+                    <button onclick="setActiveLink('page3');" class="nav-button flex items-center px-5 py-2.5 rounded-lg shadow-md text-base">
                         <i data-lucide="arrow-right" class="w-4 h-4 mr-2"></i>
                         Trang sau (Giá đồ uống)
                     </button>
@@ -620,9 +741,9 @@
 
              <div id="page3" class="page-content">
                  <section class="section-container">
-                    <h2 class="section-title text-3xl font-semibold mb-8 text-center md:text-left">Bảng giá đồ uống</h2>
-                    <div class="menu-table">
-                        <table class="w-full">
+                    <h2 class="section-title text-h2 font-semibold mb-8 text-center md:text-left">Bảng giá đồ uống</h2>
+                    <div class="menu-table text-base">
+                    <table class="w-full">
                             <thead>
                                 <tr> <th>#</th> <th>Tên món</th> <th>Bảng giá</th> </tr>
                             </thead>
@@ -644,11 +765,11 @@
                     </div>
                 </section>
                  <footer class="mt-12 flex justify-between">
-                     <button onclick="setActiveLink('page2');" class="nav-button bg-gray-500 flex items-center px-5 py-2.5 rounded-lg shadow-md">
+                     <button onclick="setActiveLink('page2');" class="nav-button bg-gray-500 flex items-center px-5 py-2.5 rounded-lg shadow-md text-base">
                         <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
                         Trang trước (Đồ uống)
                     </button>
-                     <button onclick="setActiveLink('page4');" class="nav-button flex items-center px-5 py-2.5 rounded-lg shadow-md">
+                     <button onclick="setActiveLink('page4');" class="nav-button flex items-center px-5 py-2.5 rounded-lg shadow-md text-base">
                         <i data-lucide="arrow-right" class="w-4 h-4 mr-2"></i>
                         Trang sau (Giá món ăn)
                     </button>
@@ -657,9 +778,9 @@
 
              <div id="page4" class="page-content">
                  <section class="section-container">
-                    <h2 class="section-title text-3xl font-semibold mb-8 text-center md:text-left">Bảng giá món ăn</h2>
-                    <div class="menu-table">
-                        <table class="w-full">
+                    <h2 class="section-title text-h2 font-semibold mb-8 text-center md:text-left">Bảng giá món ăn</h2>
+                    <div class="menu-table text-base">
+                    <table class="w-full">
                             <thead>
                                 <tr> <th>#</th> <th>Tên món</th> <th>Bảng giá</th> </tr>
                             </thead>
@@ -682,7 +803,7 @@
                     </div>
                 </section>
                  <footer class="mt-12 flex justify-start">
-                     <button onclick="setActiveLink('page3');" class="nav-button bg-gray-500 flex items-center px-5 py-2.5 rounded-lg shadow-md">
+                     <button onclick="setActiveLink('page3');" class="nav-button bg-gray-500 flex items-center px-5 py-2.5 rounded-lg shadow-md text-base">
                         <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
                         Trang trước (Giá đồ uống)
                     </button>
@@ -691,10 +812,10 @@
 
         </main>
     </div>
-    <footer class="site-footer">
-        <div class="footer-container">
+    <footer class="site-footer text-sm">
+    <div class="footer-container">
             <div class="footer-column">
-                <h4>THÔNG TIN LIÊN HỆ</h4>
+                <h4 class="text-base">THÔNG TIN LIÊN HỆ</h4>
                 <p><strong>Địa chỉ:</strong> Tòa nhà số 1 Kim Mã, Ba Đình, Hà Nội</p>
                 <p><strong>Email:</strong> support@danatrip.vn</p>
                 <p><strong>Hotline:</strong> 1900 2005</p>
@@ -702,27 +823,27 @@
             </div>
 
             <div class="footer-column">
-                <h4>VỀ DANA TRIP</h4>
+                <h4 class="text-base">VỀ DANA TRIP</h4>
                 <ul>
                     <li><a href="#">Cách đặt chỗ</a></li>
                     <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="#">Trợ giúp</a></li>
-                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="trogiup.html">Trợ giúp</a></li>
+                    <li><a href="lienhe.html">Liên hệ</a></li>
+                </ul>
+            </div>
+                <div class="footer-column">
+                    <h4 class="text-base">HƯỚNG DẪN</h4>
+                    <ul>
+                        <li><a href="Dnang.html">Trang chủ</a></li>
+                        <li><a href="diemden.html">Điểm đến</a></li>
+                        <li><a href="amthuc.html">Ẩm thực</a></li>
+                        <li><a href="dattour.html">Đặt chỗ</a></li>
+                        <li><a href="dichvu.html">Dịch vụ</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h4>HƯỚNG DẪN</h4>
-                <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Điểm đến</a></li>
-                    <li><a href="#">Ẩm thực</a></li>
-                    <li><a href="#">Ưu đãi</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>THEO DÕI CHÚNG TÔI</h4>
+                <h4 class="text-base">THEO DÕI CHÚNG TÔI</h4>
                 <ul>
                     <li><a href="#">FACEBOOK</a></li>
                     <li><a href="#">INSTAGRAM</a></li>
@@ -732,14 +853,15 @@
             </div>
 
             <div class="footer-column">
-                <h4>CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
+                <h4 class="text-base">CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
                 <ul>
-                    <li><a href="#">Điều khoản sử dụng</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                    <li><a href="#">Chính sách hoàn hủy</a></li>
-                    <li><a href="#">Quy định & điều kiện</a></li>
+                    <li><a href="baomat.html">Chính sách bảo mật</a></li>
+                    <li><a href="hoanhuy.html">Chính sách hoàn hủy</a></li>
+                    <li><a href="quydinh.html">Quy định & điều kiện</a></li>
                 </ul>
             </div>
+        </div>
+        <div class="footer-bottom">
         </div>
         </footer>
     <script>
@@ -820,7 +942,8 @@
             if (!noResultsMessage) {
                 noResultsMessage = document.createElement('p');
                 noResultsMessage.id = noResultsMessageId;
-                noResultsMessage.className = 'text-center text-gray-500 mt-8 text-lg hidden-by-search'; // Initially hidden
+                // Sử dụng text-base cho thông báo không tìm thấy kết quả
+                noResultsMessage.className = 'text-center text-gray-500 mt-8 text-base hidden-by-search'; // Initially hidden
                 noResultsMessage.textContent = 'Không tìm thấy kết quả nào.';
                 // Append after the section container or table
                 const section = activePage.querySelector('.section-container');
@@ -851,3 +974,5 @@
     </script>
 </body>
 </html>
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <title>Đặt Tour</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="max-w-5xl mx-auto p-6 bg-white shadow-md mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Thông tin liên lạc -->
+      <div>
+        <h2 class="text-lg font-semibold mb-4">Thông tin liên lạc</h2>
+        <div class="space-y-4">
+          <input type="text" placeholder="Họ và tên" id="name" class="w-full border p-2 rounded" />
+          <input type="text" placeholder="Số điện thoại" id="phone" class="w-full border p-2 rounded" />
+          <input type="email" placeholder="Email" id="email" class="w-full border p-2 rounded" />
+          <input type="text" placeholder="Địa chỉ" id="address" class="w-full border p-2 rounded" />
+        </div>
+      </div>
+
+      <!-- Thông tin tour -->
+      <div class="bg-blue-50 p-6 rounded shadow-sm">
+        <h2 class="text-xl font-bold mb-2" id="tour-title">Rừng dừa bảy mẫu</h2>
+
+        <label for="tour">Chọn tour:</label>
+        <select id="tour" class="border p-2 rounded w-full mb-4">
+          <option value="baotang">Bảo tàng mỹ thuật</option>
+          <option value="city">Đà Nẵng City</option>
+          <option value="CV">Núi thần tài - CV suối khoáng nóng</option>
+          <option value="linhung">Bán đảo Sơn Trà - Chùa Linh Ứng</option>
+          <option value="nguhanhson">Ngũ Hành Sơn</option>
+          <option value="rungdua" selected>Rừng dừa bảy mẫu</option>
+          <option value="rungdua" selected>Biển - Sơn Trà - Bãi Rạng - Ghềnh Bàng</option>
+          <option value="rungdua" selected>Bà Nà Hills</option>
+          <option value="rungdua" selected>Đêm - du thuyền sông Hàn</option>
+        </select>
+
+        <div class="text-sm space-y-1 mb-4">
+          <p>Người lớn: <span id="adult-info" class="font-bold"></span></p>
+          <p>Trẻ em: <span id="child-info" class="font-bold"></span></p>
+          <p>Giảm giá: <span id="discount-info" class="font-bold">0 VND</span></p>
+          <p class="font-bold" id="total-price">Tổng cộng: </p>
+        </div>
+
+        <div class="mt-4">
+          <label for="adults">Người lớn:</label>
+          <input id="adults" type="number" min="0" value="2" class="border p-2 rounded w-20" />
+          <label for="children" class="ml-4">Trẻ em:</label>
+          <input id="children" type="number" min="0" value="0" class="border p-2 rounded w-20" />
+        </div>
+
+        <div class="mt-4">
+          <label for="departure">Ngày khởi hành:</label>
+          <input id="departure" type="date" class="border p-2 rounded w-full mt-2" value="2025-03-25" />
+        </div>
+
+        <div class="flex gap-2 mb-4 mt-4">
+          <input type="text" placeholder="Mã giảm giá" class="flex-1 border p-2 rounded" />
+          <button class="bg-orange-400 text-white px-4 rounded hover:bg-orange-500">Áp dụng</button>
+        </div>
+
+        <button class="bg-orange-500 text-white w-full py-2 rounded hover:bg-orange-600" onclick="confirmBooking()">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tourPrices = {
+      baotang: { name: "Bảo tàng mỹ thuật", adult: 850000, child: 700000 },
+      city: { name: "Đà Nẵng City", adult: 1250000, child: 1100000 },
+      CV: { name: "Núi thần tài - CV suối khoáng nóng", adult: 1650000, child: 1500000 },
+      linhung: { name: "Bán đảo Sơn Trà - Chùa Linh Ứng", adult: 1650000, child: 1500000 },
+      nguhanhson: { name: "Ngũ Hành Sơn", adult: 2350000, child: 2200000 },
+      rungdua: { name: "Rừng dừa bảy mẫu", adult: 700000, child: 550000 },
+      sontra: { name:"Biển - Sơn Trà - Bãi Rạng - Ghềnh Bàng", adult: 2450000, child: 2250000},
+      songhan: { name: "Đêm - du thuyền sông Hàn", adult: 450000, child: 350000},
+      bana: { name:"Bà Nà Hilss", adult: 1650000, child: 1500000}
+    };
+
+    function updateTotal() {
+      const selectedTour = document.getElementById("tour").value;
+      const prices = tourPrices[selectedTour];
+
+      const adults = parseInt(document.getElementById("adults").value) || 0;
+      const children = parseInt(document.getElementById("children").value) || 0;
+
+      document.getElementById("tour-title").textContent = prices.name;
+      document.getElementById("adult-info").textContent = `${adults} × ${prices.adult.toLocaleString()} VND`;
+      document.getElementById("child-info").textContent = `${children} × ${prices.child.toLocaleString()} VND`;
+
+      const total = (adults * prices.adult) + (children * prices.child);
+      document.getElementById("total-price").textContent = `Tổng cộng: ${total.toLocaleString()} VND`;
+    }
+
+    function confirmBooking() {
+      const selectedTour = document.getElementById("tour").value;
+      const prices = tourPrices[selectedTour];
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+      const adults = parseInt(document.getElementById('adults').value) || 0;
+      const children = parseInt(document.getElementById('children').value) || 0;
+      const departure = document.getElementById('departure').value;
+      const total = (adults * prices.adult) + (children * prices.child);
+
+      const bookingInfo = {
+        name, phone, email, address,
+        tour: prices.name,
+        adults, children, departure, total
+      };
+
+      localStorage.setItem("bookingInfo", JSON.stringify(bookingInfo));
+      window.location.href = "xacnhan.html";
+    }
+
+    // Event listeners
+    document.getElementById("tour").addEventListener("change", updateTotal);
+    document.getElementById("adults").addEventListener("input", updateTotal);
+    document.getElementById("children").addEventListener("input", updateTotal);
+
+    // Initial call
+    updateTotal();
+  </script>
+</body>
+</html>

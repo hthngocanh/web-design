@@ -24,12 +24,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 20px;
     }
 
-header img {
-  max-width: 150px; /* Đảm bảo logo có kích thước hợp lý */
-  height: auto; /* Đảm bảo tỷ lệ của logo không bị biến dạng */
-}
+    header img {
+    max-width: 150px; /* Đảm bảo logo có kích thước hợp lý */
+    height: auto; /* Đảm bảo tỷ lệ của logo không bị biến dạng */
+    }
     .auth-buttons {
       display: flex;
       gap: 10px;
@@ -86,8 +87,10 @@ header img {
     .vehicle-options, .tour-options {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
       flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .vehicle, .tour {
       background: rgba(255, 255, 255, 0.9);
@@ -97,6 +100,7 @@ header img {
       text-align: center;
       width: 200px;
       transition: transform 0.3s;
+      font-size: 16px;
     }
     .vehicle:hover, .tour:hover {
       transform: scale(1.05);
@@ -145,9 +149,111 @@ header img {
       background: rgba(165, 210, 247, 0.9);
       color: white;
       text-align: center;
-      padding: 20px;
+      font-size: 14px;
+      padding: 90px;
       margin-top: 50px;
     }
+    .site-footer {
+            background-color: #e0f2f7; /* Màu xanh dương nhạt - Điều chỉnh mã màu cho chính xác */
+            color: #333; /* Màu chữ cơ bản trong footer */
+            padding: 40px 0; /* Khoảng đệm trên/dưới */
+            font-size: 0.9em; /* Kích thước chữ cơ bản */
+            line-height: 1.6; /* Chiều cao dòng cho dễ đọc */
+            /* Ensure footer is below other content */
+            margin-top: auto; /* Pushes footer down if content is short */
+        }
+
+        .footer-container {
+            max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+            margin: 0 auto; /* Căn giữa container */
+            padding: 0 20px; /* Khoảng đệm trái/phải */
+            display: flex;
+            flex-wrap: wrap; /* Cho phép các cột xuống dòng trên màn hình nhỏ */
+            justify-content: space-between; /* Phân bố không gian giữa các cột */
+        }
+
+        .footer-column {
+            flex: 1; /* Cho phép các cột co giãn */
+            min-width: 200px; /* Chiều rộng tối thiểu trước khi xuống dòng */
+            margin: 0 15px 30px 15px; /* Khoảng cách giữa các cột và dưới cùng */
+            /* Đã bỏ flex-basis để các cột chia đều không gian */
+            /* flex-basis: calc(25% - 30px); */
+        }
+
+        .footer-column h4 {
+            font-size: 1em; /* Kích thước tiêu đề cột */
+            color: #002366; /* Màu xanh đậm cho tiêu đề */
+            text-transform: uppercase;
+            margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+            font-weight: bold;
+        }
+
+        .footer-column p {
+            margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin */
+            color: #495057; /* Màu chữ cho thông tin liên hệ */
+        }
+
+        .footer-column p strong {
+            color: #002366; /* Màu chữ đậm hơn cho nhãn */
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 8px; /* Khoảng cách giữa các link */
+        }
+
+        .footer-column a {
+            color: #0056b3; /* Màu xanh dương cho link */
+            text-decoration: underline; /* Gạch chân link giống hình ảnh */
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #003d80; /* Màu link đậm hơn khi hover */
+            text-decoration: none; /* Bỏ gạch chân khi hover (tùy chọn) */
+        }
+
+        /* Tiêu đề riêng cho phần chính sách trong cột 4 */
+        /* Đã xóa quy tắc này vì phần chính sách đã được chuyển sang cột riêng */
+        /* .footer-column .policy-title {
+            margin-top: 15px;
+        } */
+
+        /* Phần copyright (nếu có) */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #cce7f0; /* Đường kẻ phân cách nhẹ */
+            font-size: 0.85em;
+            color: #6c757d; /* Màu chữ nhạt hơn */
+        }
+        .footer-container {
+                flex-direction: column; /* Chuyển thành 1 cột */
+                align-items: center; /* Căn giữa nội dung */
+                text-align: center; /* Căn giữa chữ trong cột */
+            }
+            .footer-column {
+                flex-basis: 100%; /* Mỗi cột chiếm toàn bộ chiều rộng */
+                min-width: auto;
+                margin: 0 0 30px 0; /* Chỉ cần margin dưới */
+                padding: 0 15px;
+            }
+             .footer-column ul {
+                /* display: inline-block; */ /* Giúp canh giữa list nếu cần */
+                text-align: center;
+             }
+             .footer-column h4 {
+                 text-align: center; /* Center footer titles on mobile */
+             }
+             .footer-column p {
+                 text-align: center; /* Center footer paragraphs on mobile */
+             }
   </style>
 </head>
 <script>
@@ -360,6 +466,7 @@ header img {
     }
   </script>
 <!-- Footer -->
+
 <div class="footer" style="background-color: #d4ecff; padding: 20px; color: #000;">
   <div class="footer-columns" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
     <div class="footer-column" style="flex: 1; margin: 10px; min-width: 200px;">
@@ -371,30 +478,30 @@ header img {
     </div>
     <div class="footer-column" style="flex: 1; margin: 10px; min-width: 200px;">
       <h4 style="color: #0066cc;">VỀ DANA TRIP</h4>
-      <p><a href="#">Cách đặt chỗ</a></p>
-      <p><a href="#">Về chúng tôi</a></p>
-      <p><a href="#">Trợ giúp</a></p>
-      <p><a href="#">Liên hệ</a></p>
+      <p><a href="dattour.html">Cách đặt chỗ</a></p>
+      <p><a href="">Về chúng tôi</a></p>
+      <p><a href="trogiup.html">Trợ giúp</a></p>
+      <p><a href="lienhe.html">Liên hệ</a></p>
     </div>
     <div class="footer-column" style="flex: 1; margin: 10px; min-width: 200px;">
       <h4 style="color: #0066cc;">HƯỚNG DẪN</h4>
       <p><a href="Dnang.html">Trang chủ</a></p>
       <p><a href="diemden.html">Điểm đến</a></p>
-      <p><a href="athuc.html">Ẩm thực</a></p>
-      <p><a href="2.5 btl.html">Đặt tour</a></p>
+      <p><a href="amthuc.html">Ẩm thực</a></p>
+      <p><a href="dattour.html">Đặt tour</a></p>
       <p><a href="dichvu.html">Dịch vụ</a></p>
     </div>
     <div class="footer-column" style="flex: 1; margin: 10px; min-width: 200px;">
       <h4 style="color: #0066cc;">THEO DÕI CHÚNG TÔI</h4>
       <p>FACEBOOK<br>INSTAGRAM<br>TIKTOK<br>YOUTUBE</p>
       <h4 style="color: #0066cc;">CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
-      <p><a href="#">Điều khoản sử dụng</a></p>
-      <p><a href="#">Chính sách bảo mật</a></p>
-      <p><a href="#">Chính sách hoàn huỷ</a></p>
-      <p><a href="#">Quy định & điều kiện</a></p>
+      <p><a href="dieukhoan.html">Điều khoản sử dụng</a></p>
+      <p><a href="baomat.html">Chính sách bảo mật</a></p>
+      <p><a href="hoanhuy.html">Chính sách hoàn huỷ</a></p>
+      <p><a href="quydinh.html">Quy định & điều kiện</a></p>
     </div>
   </div>
-  <div class="footer-bottom" style="text-align: center; border-top: 1px solid #000; padding-top: 10px; font-size: 14px;">
+  <div class="footer-bottom" style="text-align: center;border-top: 1px solid #000; padding-top: 10px; font-size: 14px;">
     © 2025 DANA TRIP. All Rights Reserved.
   </div>
 </div>

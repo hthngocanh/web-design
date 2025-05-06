@@ -5,128 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tour Đà Nẵng</title>
   <style>
-    /* Reset mặc định */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+   
     body {
-      font-family: 'Lato', sans-serif;
-      background-color: #f8f9fa;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
 
-    /* ---------------- Banner ---------------- */
-    .banner {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-    }
-
-    .banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: brightness(60%);
-    }
-
-    /* Chữ nằm đè trên ảnh */
-    .text-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      text-align: center;
-      z-index: 10;
-    }
-
-    .text-overlay h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-
-    .text-overlay h1 {
-      font-size: 36px;
-      font-weight: bold;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-    }
-
-    /* ---------------- Nội dung chính ---------------- */
-    .tours {
+    /* HEADER */
+    header {
+      background-color: #add8f6;
+      padding: 20px 40px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .tour-card {
-      width: 250px;
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      padding: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: space-between;
-      height: 380px;
+      flex-wrap: wrap;
     }
 
-    .tour-card:hover {
-      transform: translateY(-5px);
-      transition: transform 0.2s ease;
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+
+    .logo-title img {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .auth-buttons button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* SEARCH BAR */
+    .search-bar {
+      background-color: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-bar input[type="text"] {
+      width: 300px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+    .search-bar button:hover {
+      background-color: darkorange;
+    }
+
+    .tours {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Khoảng cách giữa các tour */
+  padding: 20px;
+  justify-items: center;
+}
+
+.tour-card {
+  width: 240px; /* Tour nhỏ hơn */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
     .tour-card img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 8px;
     }
 
     .tour-card h4 {
-      padding: 10px;
-      font-size: 1.1rem;
-      color: #333;
+      margin: 10px;
     }
 
     .tour-card p {
-      padding: 0 10px 10px;
-      color: #007b00;
-      font-weight: bold;
+      margin: 0 10px 10px;
     }
 
-    .xem-ngay {
-      display: block;
-      width: 90px;
-      padding: 6px 0;
-      background-color: #f57c00;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      text-align: center;
-      margin-top: auto;
-      margin-left: auto;
-      margin-right: auto;
-      transition: background-color 0.3s ease;
-    }
-
-    .xem-ngay:hover {
-      background-color: #318350;
-    }
-
-    /* ---------------- Footer ---------------- */
-    .site-footer {
+   
+       /* ---------------- Footer ---------------- */
+       .site-footer {
     background-color: #e0f2f7; /* Màu xanh dương nhạt - Điều chỉnh mã màu cho chính xác */
     color: #333; /* Màu chữ cơ bản trong footer */
     padding: 40px 0; /* Khoảng đệm trên/dưới */
@@ -190,24 +187,63 @@
     color: #003d80; /* Màu link đậm hơn khi hover */
     text-decoration: none; /* Bỏ gạch chân khi hover (tùy chọn) */
 }
+.xem-ngay {
+      display: block;
+      width: 90px;
+      padding: 6px 0;
+      background-color: #f08010;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: auto;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background-color 0.3s ease;
+    }
 
+.xem-ngay:hover {
+      background-color: #d76122;
+    }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+      .tours {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Banner -->
-  <header class="banner">
-    
-    <img src="https://phunugioi.com/wp-content/uploads/2020/11/hinh-anh-thanh-pho-da-nang-voi-cau-song-han.jpg" alt="Banner">
-    <div class="text-overlay">
-      <h2>TOUR SERVICE</h2>
-      <h1>ĐÀ NẴNG</h1>
+ <!-- Header -->
+ <header>
+    <div class="logo-title">
+      <img src="https://via.placeholder.com/40x40?text=Logo" alt="Dana Trip Logo">
+    </div>
+    <nav>
+      <a href="Dnang.html">Trang chủ</a>
+      <a href="diemden.html">Điểm đến</a>
+      <a href="dattour.html">Đặt Tour</a>
+      <a href="amthuc.html">Ẩm thực</a>
+      <a href="dichvu.html">Dịch vụ</a>
+    </nav>
+    <div class="auth-buttons">
+      <button>Đăng nhập</button>
+      <button>Đăng ký</button>
     </div>
   </header>
 
+  <!-- Thanh tìm kiếm -->
+  <div class="search-bar">
+    <input type="text" placeholder="Bạn muốn đi đâu...">
+    <button>Tìm kiếm</button>
+  </div>
+
   <main>
     <section class="tours">
-      <!-- Danh sách tour -->
+      <!-- Tour 1 -->
       <div class="tour-card">
         <img src="https://www.pullman-danang.com/wp-content/uploads/sites/86/2019/05/DJI_0004.jpg" alt="Tour 1">
         <h4>Tour Bà Nà Hills</h4>
@@ -265,37 +301,34 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
         <div class="footer-column">
             <h4>THÔNG TIN LIÊN HỆ</h4>
             <p><strong>Địa chỉ:</strong> Tòa nhà số 1 Kim Mã, Ba Đình, Hà Nội</p>
             <p><strong>Email:</strong> support@danatrip.vn</p>
-            <p><strong>Hotline:</strong> 1900 2005</p>
+            <p><strong>Hotline:</strong> 1900 2006</p>
             <p><strong>Thời gian hỗ trợ:</strong> 08:30 - 21:30 các ngày trong tuần</p>
         </div>
-
         <div class="footer-column">
             <h4>VỀ DANA TRIP</h4>
             <ul>
-                <li><a href="#">Cách đặt chỗ</a></li>
+                <li><a href="dattour.html">Cách đặt chỗ</a></li>
                 <li><a href="#">Về chúng tôi</a></li>
-                <li><a href="#">Trợ giúp</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="trogiup.html">Trợ giúp</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
             </ul>
         </div>
-
         <div class="footer-column">
             <h4>HƯỚNG DẪN</h4>
             <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Điểm đến</a></li>
-                <li><a href="#">Ẩm thực</a></li>
-                <li><a href="#">Ưu đãi</a></li>
+                <li><a href="Dnang.html">Trang chủ</a></li>
+                <li><a href="diemden.html">Điểm đến</a></li>
+                <li><a href="amthuc.html">Ẩm thực</a></li>
+                <li><a href="dattour.html">Đặt tour</a></li>
+                <li><a href="dichvu.html">Dịch vụ</a></li>
             </ul>
         </div>
-
         <div class="footer-column">
             <h4>THEO DÕI CHÚNG TÔI</h4>
             <ul>
@@ -305,18 +338,21 @@
                 <li><a href="#">YOUTUBE</a></li>
             </ul>
         </div>
-
         <div class="footer-column">
             <h4>CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
             <ul>
-                <li><a href="#">Điều khoản sử dụng</a></li>
-                <li><a href="#">Chính sách bảo mật</a></li>
-                <li><a href="#">Chính sách hoàn hủy</a></li>
-                <li><a href="#">Quy định & điều kiện</a></li>
+                <li><a href="baomat.html">Chính sách bảo mật</a></li>
+                <li><a href="hoanhuy.html">Chính sách hoàn hủy</a></li>
+                <li><a href="quydinh.html">Quy định & điều kiện</a></li>
             </ul>
         </div>
     </div>
     </footer>
-
+  <script>
+    function handleShowHiddenForm(formType) {
+      document.getElementById('loginForm').style.display = formType === 'login' ? 'block' : 'none';
+      document.getElementById('signupForm').style.display = formType === 'signup' ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>

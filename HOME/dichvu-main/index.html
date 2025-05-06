@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Đà Nẵng</title>
+  <style>
+   
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #add8f6;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-title img {
+      height: 40px;
+    }
+
+    .logo-title h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .auth-buttons button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* SEARCH BAR */
+    .search-bar {
+      background-color: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-bar input[type="text"] {
+      width: 300px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+    }
+    .search-bar button:hover {
+      background-color: darkorange;
+    }
+
+    .tours {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Khoảng cách giữa các tour */
+  padding: 20px;
+  justify-items: center;
+}
+
+.tour-card {
+  width: 240px; /* Tour nhỏ hơn */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+    .tour-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .tour-card h4 {
+      margin: 10px;
+    }
+
+    .tour-card p {
+      margin: 0 10px 10px;
+    }
+
+   
+       /* ---------------- Footer ---------------- */
+       .site-footer {
+    background-color: #e0f2f7; /* Màu xanh dương nhạt - Điều chỉnh mã màu cho chính xác */
+    color: #333; /* Màu chữ cơ bản trong footer */
+    padding: 40px 0; /* Khoảng đệm trên/dưới */
+    font-size: 0.9em; /* Kích thước chữ cơ bản */
+    line-height: 1.6; /* Chiều cao dòng cho dễ đọc */
+    /* Ensure footer is below other content */
+    margin-top: auto; /* Pushes footer down if content is short */
+}
+
+.footer-container {
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa container */
+    padding: 0 20px; /* Khoảng đệm trái/phải */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các cột xuống dòng trên màn hình nhỏ */
+    justify-content: space-between; /* Phân bố không gian giữa các cột */
+}
+
+.footer-column {
+    flex: 1; /* Cho phép các cột co giãn */
+    min-width: 200px; /* Chiều rộng tối thiểu trước khi xuống dòng */
+    margin: 0 15px 30px 15px; /* Khoảng cách giữa các cột và dưới cùng */
+    /* Đã bỏ flex-basis để các cột chia đều không gian */
+    /* flex-basis: calc(25% - 30px); */
+}
+
+.footer-column h4 {
+    font-size: 1em; /* Kích thước tiêu đề cột */
+    color: #002366; /* Màu xanh đậm cho tiêu đề */
+    text-transform: uppercase;
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+    font-weight: bold;
+}
+
+.footer-column p {
+    margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin */
+    color: #495057; /* Màu chữ cho thông tin liên hệ */
+}
+
+.footer-column p strong {
+    color: #002366; /* Màu chữ đậm hơn cho nhãn */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 8px; /* Khoảng cách giữa các link */
+}
+
+.footer-column a {
+    color: #0056b3; /* Màu xanh dương cho link */
+    text-decoration: underline; /* Gạch chân link giống hình ảnh */
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #003d80; /* Màu link đậm hơn khi hover */
+    text-decoration: none; /* Bỏ gạch chân khi hover (tùy chọn) */
+}
+.xem-ngay {
+      display: block;
+      width: 90px;
+      padding: 6px 0;
+      background-color: #f08010;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: auto;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background-color 0.3s ease;
+    }
+
+.xem-ngay:hover {
+      background-color: #d76122;
+    }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+      .tours {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Header -->
+ <header>
+    <div class="logo-title">
+      <img src="https://via.placeholder.com/40x40?text=Logo" alt="Dana Trip Logo">
+      <h1>✈️ Đặt tour DANA TRIP</h1>
+    </div>
+    <nav>
+      <a href="Dnang.html">Trang chủ</a>
+      <a href="diemden.html">Điểm đến</a>
+     
+      <a href="athuc.html">Ẩm thực</a>
+      <a href="dichvu.html">Dịch vụ</a>
+    </nav>
+    <div class="auth-buttons">
+      <button>Đăng nhập</button>
+      <button>Đăng ký</button>
+    </div>
+  </header>
+
+  <!-- Thanh tìm kiếm -->
+  <div class="search-bar">
+    <input type="text" placeholder="Bạn muốn đi đâu...">
+    <button>Tìm kiếm</button>
+  </div>
+
+  <main>
+    <section class="tours">
+      <!-- Tour 1 -->
+      <div class="tour-card">
+        <img src="https://www.pullman-danang.com/wp-content/uploads/sites/86/2019/05/DJI_0004.jpg" alt="Tour 1">
+        <h4>Tour Bà Nà Hills</h4>
+        <a href="banahill.html" class="xem-ngay">Xem ngay</a>
+        <p>1.650.000 VNĐ / người</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://phuotvivu.com/blog/wp-content/uploads/2019/01/ban-dao-son-tra.jpg" alt="Tour 2">
+        <h4>Tour Biển - Sơn Trà - Bãi Rạng - Ghềnh Bàng</h4>
+        <a href="sontra.html" class="xem-ngay">Xem ngay</a>
+        <p>2.450.000 VNĐ / người</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://ik.imagekit.io/tvlk/blog/2022/12/bao-tang-da-nang-9.jpg?tr=dpr-2,w-675" alt="Tour 3">
+        <h4>Tour Bảo tàng mỹ thuật</h4>
+        <a href="baotang.html" class="xem-ngay">Xem ngay</a>
+        <p>800.000 VNĐ / người</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://static.vinwonders.com/production/linh-ung-pagoda-banner_optimized.jpg" alt="Tour 4">
+        <h4>Tour Bán đảo Sơn Trà - Chùa Linh Ứng</h4>
+        <a href="linhung.html" class="xem-ngay">Xem ngay</a>
+        <p>1.650.000 VNĐ / người</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://static.vinwonders.com/2022/03/ngu-hanh-son-09.jpg" alt="Tour 5">
+        <h4>Tour Ngũ Hành Sơn</h4>
+        <a href="nguhanhson.html" class="xem-ngay">Xem ngay</a>
+        <p>2.350.000 VNĐ / người</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://elitetour.com.vn/files/images/Blogs/rung-dua-bay-mau-3.jpg" alt="Tour 6">
+        <h4>Tour Rừng dừa bảy mẫu</h4>
+        <a href="rungdua.html" class="xem-ngay">Xem ngay</a>
+        <p>700.000 VNĐ / người</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://cdn.yeudulich.com/940x630/media/attraction/attraction/VNMDAD16.jpg" alt="Tour 7">
+        <h4>Tour Núi thần tài - CV suối khoáng nóng</h4>
+        <a href="suoinong.html" class="xem-ngay">Xem ngay</a>
+        <p>750.000 VNĐ / người</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://vietnamhoneymoontravel.com/wp-content/uploads/2021/09/Introduction-to-Danang-The-Most-Livable-City-in-Vietnam.jpg" alt="Tour 8">
+        <h4>Tour Đà Nẵng City</h4>
+        <a href="city.html" class="xem-ngay">Xem ngay</a>
+        <p>1.250.000 VNĐ / người</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://static.vinwonders.com/2022/12/du-thuyen-tren-song-han-banner.jpg" alt="Tour 9">
+        <h4>Tour Đêm - du thuyền sông Hàn</h4>
+        <a href="songhan.html" class="xem-ngay">Xem ngay</a>
+        <p>450.000 VNĐ / người</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>THÔNG TIN LIÊN HỆ</h4>
+            <p><strong>Địa chỉ:</strong> Tòa nhà số 1 Kim Mã, Ba Đình, Hà Nội</p>
+            <p><strong>Email:</strong> support@danatrip.vn</p>
+            <p><strong>Hotline:</strong> 1900 2006</p>
+            <p><strong>Thời gian hỗ trợ:</strong> 08:30 - 21:30 các ngày trong tuần</p>
+        </div>
+
+        <div class="footer-column">
+            <h4>VỀ DANA TRIP</h4>
+            <ul>
+                <li><a href="dattour.html">Cách đặt chỗ</a></li>
+                <li><a href="#">Về chúng tôi</a></li>
+                <li><a href="trogiup.html">Trợ giúp</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>HƯỚNG DẪN</h4>
+            <ul>
+                <li><a href="Dnang.html">Trang chủ</a></li>
+                <li><a href="diemden.html">Điểm đến</a></li>
+                <li><a href="athuc.html">Ẩm thực</a></li>
+                <li><a href="#">Ưu đãi</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>THEO DÕI CHÚNG TÔI</h4>
+            <ul>
+                <li><a href="#">FACEBOOK</a></li>
+                <li><a href="#">INSTAGRAM</a></li>
+                <li><a href="#">TIKTOK</a></li>
+                <li><a href="#">YOUTUBE</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
+            <ul>
+                <li><a href="dieukhoan.html">Điều khoản sử dụng</a></li>
+                <li><a href="baomat.html">Chính sách bảo mật</a></li>
+                <li><a href="hoanhuy.html">Chính sách hoàn hủy</a></li>
+                <li><a href="quydinh.html">Quy định & điều kiện</a></li>
+            </ul>
+        </div>
+    </div>
+    </footer>
+  <script>
+    function handleShowHiddenForm(formType) {
+      document.getElementById('loginForm').style.display = formType === 'login' ? 'block' : 'none';
+      document.getElementById('signupForm').style.display = formType === 'signup' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
