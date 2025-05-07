@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dat.css">
+  <title>Xác nhận đặt tour</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-5xl mx-auto p-6 bg-white shadow-md mt-10">
+    <h1 class="text-2xl font-bold mb-6">Xác nhận Đặt Tour</h1>
+    
+    <div class="space-y-4">
+      <h2 class="text-xl font-semibold">Thông tin đặt tour</h2>
+      
+      <div id="confirmation-details">
+        <script>
+            // Lấy thông tin đặt tour từ localStorage
+            const bookingInfo = JSON.parse(localStorage.getItem("bookingInfo"));
+        
+            // Hiển thị thông tin đặt tour
+            if (bookingInfo) {
+              document.getElementById('confirmation-details').innerHTML = `
+                <p><strong>Họ và tên:</strong> ${bookingInfo.name}</p>
+                <p><strong>Số điện thoại:</strong> ${bookingInfo.phone}</p>
+                <p><strong>Email:</strong> ${bookingInfo.email}</p>
+                <p><strong>Địa chỉ:</strong> ${bookingInfo.address}</p>
+                <p><strong>Ngày khởi hành:</strong> ${bookingInfo.departure}</p>
+                <p><strong>Người lớn:</strong> ${bookingInfo.adults} người</p>
+                <p><strong>Trẻ em:</strong> ${bookingInfo.children} người</p>
+                <p><strong>Tổng cộng:</strong> ${bookingInfo.total.toLocaleString()} VND</p>
+              `;
+            }
+        
+          </script>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>THÔNG TIN LIÊN HỆ</h4>
+            <p><strong>Địa chỉ:</strong> Tòa nhà số 1 Kim Mã, Ba Đình, Hà Nội</p>
+            <p><strong>Email:</strong> support@danatrip.vn</p>
+            <p><strong>Hotline:</strong> 1900 2006</p>
+            <p><strong>Thời gian hỗ trợ:</strong> 08:30 - 21:30 các ngày trong tuần</p>
+        </div>
+        <div class="footer-column">
+            <h4>VỀ DANA TRIP</h4>
+            <ul>
+                <li><a href="dattour.html">Cách đặt chỗ</a></li>
+                <li><a href="#">Về chúng tôi</a></li>
+                <li><a href="trogiup.html">Trợ giúp</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>HƯỚNG DẪN</h4>
+            <ul>
+                <li><a href="Dnang.html">Trang chủ</a></li>
+                <li><a href="diemden.html">Điểm đến</a></li>
+                <li><a href="amthuc.html">Ẩm thực</a></li>
+                <li><a href="dattour.html">Đặt tour</a></li>
+                <li><a href="dichvu.html">Dịch vụ</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>THEO DÕI CHÚNG TÔI</h4>
+            <ul>
+                <li><a href="#">FACEBOOK</a></li>
+                <li><a href="#">INSTAGRAM</a></li>
+                <li><a href="#">TIKTOK</a></li>
+                <li><a href="#">YOUTUBE</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>CHÍNH SÁCH & ĐIỀU KHOẢN</h4>
+            <ul>
+                <li><a href="baomat.html">Chính sách bảo mật</a></li>
+                <li><a href="hoanhuy.html">Chính sách hoàn hủy</a></li>
+                <li><a href="quydinh.html">Quy định & điều kiện</a></li>
+            </ul>
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

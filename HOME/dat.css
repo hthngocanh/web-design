@@ -1,0 +1,71 @@
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+  
+.site-footer {
+  background-color: #e0f2f7; /* Màu xanh dương nhạt - Điều chỉnh mã màu cho chính xác */
+  color: #333; /* Màu chữ cơ bản trong footer */
+  padding: 40px 0; /* Khoảng đệm trên/dưới */
+  font-size: 0.9em; /* Kích thước chữ cơ bản */
+  line-height: 1.6; /* Chiều cao dòng cho dễ đọc */
+  /* Ensure footer is below other content */
+  margin-top: auto; /* Pushes footer down if content is short */
+}
+
+.footer-container {
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa container */
+  padding: 0 20px; /* Khoảng đệm trái/phải */
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các cột xuống dòng trên màn hình nhỏ */
+  justify-content: space-between; /* Phân bố không gian giữa các cột */
+}
+
+.footer-column {
+  flex: 1; /* Cho phép các cột co giãn */
+  min-width: 200px; /* Chiều rộng tối thiểu trước khi xuống dòng */
+  margin: 0 15px 30px 15px; /* Khoảng cách giữa các cột và dưới cùng */
+  /* Đã bỏ flex-basis để các cột chia đều không gian */
+  /* flex-basis: calc(25% - 30px); */
+}
+
+.footer-column h4 {
+  font-size: 1em; /* Kích thước tiêu đề cột */
+  color: #002366; /* Màu xanh đậm cho tiêu đề */
+  text-transform: uppercase;
+  margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+  font-weight: bold;
+}
+
+.footer-column p {
+  margin-bottom: 10px; /* Khoảng cách giữa các dòng thông tin */
+  color: #495057; /* Màu chữ cho thông tin liên hệ */
+}
+
+.footer-column p strong {
+  color: #002366; /* Màu chữ đậm hơn cho nhãn */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px; /* Khoảng cách giữa các link */
+}
+
+.footer-column a {
+  color: #0056b3; /* Màu xanh dương cho link */
+  text-decoration: underline; /* Gạch chân link giống hình ảnh */
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #003d80; /* Màu link đậm hơn khi hover */
+  text-decoration: none; /* Bỏ gạch chân khi hover (tùy chọn) */
+}
+
+  
